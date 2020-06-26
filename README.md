@@ -2,9 +2,11 @@
 
 A collection of Code Wars Solutions by Adam Shappy
 
-![](https://www.codewars.com/users/mrshappy0/badges/large).
+My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 **Disclaimer**: This is by no means the best solution for these problems.
+
+![](kyu-info.png)
 
 ---
 
