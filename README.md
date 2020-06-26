@@ -22,10 +22,18 @@ createPhoneNumber = (numbers, n = numbers.join("")) =>
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
-<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./Adjacent-repeated-words-in-a-string.js.js) -->
+---
+
+#### [Adjacent Repeated Words in a String](https://www.codewars.com/kata/5245a9138ca049e9a10007b8) | [Solution](https://github.com/mrshappy0/codewars/blob/master/Adjacent-repeated-words-in-a-string.js)
+
+**Problem**:
+
+_Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number._
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./Adjacent-repeated-words-in-a-string.js) -->
 <!-- The below code snippet is automatically added from ./Adjacent-repeated-words-in-a-string.js -->
 ```js
-createPhoneNumber = (numbers, n = numbers.join("")) =>
-  `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
+countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
+  searchString === "" ? 0 : (searchString.match(p1) || []).length;
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
