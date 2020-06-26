@@ -4,7 +4,7 @@
   "description": "A collection of Code Wars Solutions by Adam Shappy",
   "main": "Create-Phone-Number.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "md-magic --path '**/*.md' --ignore 'node_modules'"
   },
   "repository": {
     "type": "git",
