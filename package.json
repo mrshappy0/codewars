@@ -2,7 +2,7 @@
   "name": "codewars",
   "version": "1.0.0",
   "description": "A collection of Code Wars Solutions by Adam Shappy",
-  "main": "Adjacent-repeated-words-in-a-string.js",
+  "main": "",
   "scripts": {
     "docs": "md-magic --path '**/*.md' --ignore 'node_modules'"
   },
