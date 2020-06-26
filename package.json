@@ -1,0 +1,23 @@
+{
+  "name": "codewars",
+  "version": "1.0.0",
+  "description": "A collection of Code Wars Solutions by Adam Shappy",
+  "main": "Create-Phone-Number.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrshappy0/codewars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrshappy0/codewars/issues"
+  },
+  "homepage": "https://github.com/mrshappy0/codewars#readme",
+  "devDependencies": {
+    "markdown-magic": "^1.0.0"
+  }
+}
