@@ -20,5 +20,12 @@ _Write a function that accepts an array of 10 integers (between 0 and 9), that r
 createPhoneNumber = (numbers, n = numbers.join("")) =>
   `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
 ```
-<!-- The below code snippet is automatically added from ./Create-Phone-Number.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./Adjacent-repeated-words-in-a-string.js.js) -->
+<!-- The below code snippet is automatically added from ./Adjacent-repeated-words-in-a-string.js -->
+```js
+createPhoneNumber = (numbers, n = numbers.join("")) =>
+  `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
+```
 <!-- AUTO-GENERATED-CONTENT:END *-->
