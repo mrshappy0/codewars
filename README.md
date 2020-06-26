@@ -10,7 +10,7 @@ A collection of Code Wars Solutions by Adam Shappy
 
 
 
-####  [Create Phone Number](https://github.com/mrshappy0/codewars/blob/master/Create-Phone-Number.js)
+####  [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/Create-Phone-Number.js)
 
 **Problem**:
 
