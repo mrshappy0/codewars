@@ -53,6 +53,7 @@ countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
 _Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit._
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Persistent-bugger.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Persistent-bugger.js -->
 ```js
 persistence = (num, i = 0, ar = []) => {
   return num
@@ -68,5 +69,32 @@ persistence = (num, i = 0, ar = []) => {
         i + 1
       );
 };
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+---
+
+#### [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Two-Sum.js)
+
+**Problem** (6kyu):
+
+_Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2)._
+
+_For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted._
+
+_The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array)._
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Two-Sum.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Two-Sum.js -->
+```js
+function twoSum(numbers, target) {
+  let arr = [],
+    arr_mod = numbers.forEach((el, i) => {
+      if (numbers.slice(i + 1).includes(target - el)) {
+        arr.push(i);
+        arr.push(numbers.slice(i + 1).indexOf(target - el) + i + 1);
+      }
+    });
+  return arr;
+}
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
