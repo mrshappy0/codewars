@@ -1,4 +1,4 @@
-# :cowboy_hat_face: Codewars Solutions :cowboy_hat_face:
+# :cowboy_hat_face: Codewars Solutions :cowboy_hat_face:  
 A collection of Code Wars Solutions by Adam Shappy.
 **Disclaimer**:*This is by no means the best solution for these problems.*
 ---
