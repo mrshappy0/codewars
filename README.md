@@ -1,7 +1,8 @@
 # :cowboy_hat_face: Codewars Solutions :cowboy_hat_face:
 A collection of Code Wars Solutions by Adam Shappy.\
 **Disclaimer**:*This is by no means the best solution for these problems.*\
-\
+  
+
 ---
 #### [Create Phone Number](https://github.com/mrshappy0/codewars/blob/master/Create-Phone-Number.js)
 **Problem**:
