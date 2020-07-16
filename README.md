@@ -1,5 +1,7 @@
 # :cowboy_hat_face: Codewars Solutions :cowboy_hat_face:
+
 <!-- Terminal CMD to update ReadMe Code: npm run docs -->
+
 A collection of Code Wars Solutions by Adam Shappy
 
 My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
@@ -9,9 +11,12 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 ![](kyu-info.png)
 
 ## Table of Contents
+
 <details><summary>Click to expand all problems!</summary>
-* Item 1
-* Item 2
+1. A numbered
+2. list
+  * With some
+  * Sub bullet
 </details>
 ---
 
@@ -23,10 +28,12 @@ _Write a function that accepts an array of 10 integers (between 0 and 9), that r
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Create-Phone-Number.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Create-Phone-Number.js -->
+
 ```js
 createPhoneNumber = (numbers, n = numbers.join("")) =>
   `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -35,18 +42,20 @@ createPhoneNumber = (numbers, n = numbers.join("")) =>
 
 **Problem** (6kyu):
 
-*You know how sometimes you write the the same word twice in a sentence, but then don't notice that it happened? For example, you've been distracted for a second. Did you notice that "the" is doubled in the first sentence of this description?*
+_You know how sometimes you write the the same word twice in a sentence, but then don't notice that it happened? For example, you've been distracted for a second. Did you notice that "the" is doubled in the first sentence of this description?_
 
-*As as aS you can see, it's not easy to spot those errors, especially if words differ in case, like *"as"* at the beginning of the sentence.*
+_As as aS you can see, it's not easy to spot those errors, especially if words differ in case, like _"as"_ at the beginning of the sentence._
 
-*Write a function that counts the number of sections repeating the same word (case insensitive). The occurence of two or more equal words next after each other count as one.*
+_Write a function that counts the number of sections repeating the same word (case insensitive). The occurence of two or more equal words next after each other count as one._
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Adjacent-repeated-words-in-a-string.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Adjacent-repeated-words-in-a-string.js -->
+
 ```js
 countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
   searchString === "" ? 0 : (searchString.match(p1) || []).length;
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -59,6 +68,7 @@ _Write a function, persistence, that takes in a positive parameter num and retur
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Persistent-bugger.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Persistent-bugger.js -->
+
 ```js
 persistence = (num, i = 0, ar = []) => {
   return num
@@ -75,8 +85,8 @@ persistence = (num, i = 0, ar = []) => {
       );
 };
 ```
-<!-- AUTO-GENERATED-CONTENT:END *-->
----
+
+## <!-- AUTO-GENERATED-CONTENT:END *-->
 
 #### [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Two-Sum.js)
 
@@ -90,6 +100,7 @@ _The input will always be valid (numbers will be an array of length 2 or greater
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Two-Sum.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Two-Sum.js -->
+
 ```js
 function twoSum(numbers, target) {
   let arr = [],
@@ -102,17 +113,18 @@ function twoSum(numbers, target) {
   return arr;
 }
 ```
-<!-- AUTO-GENERATED-CONTENT:END *-->
----
+
+## <!-- AUTO-GENERATED-CONTENT:END *-->
 
 #### [Calculator](https://www.codewars.com/kata/5235c913397cbf2508000048) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Calculator.js)
 
 **Problem** (3kyu):
 
-_Create a simple calculator that given a string of operators (), +, -, *, / and numbers separated by spaces returns the value of that expression_
+_Create a simple calculator that given a string of operators (), +, -, \*, / and numbers separated by spaces returns the value of that expression_
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Calculator.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Calculator.js -->
+
 ```js
 const Calculator = function () {
   this.evaluate = (string) => {
@@ -135,4 +147,5 @@ const Calculator = function () {
   };
 };
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
