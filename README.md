@@ -14,13 +14,18 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 <details>
   <summary>Click to expand!</summary>
-  
-   * With some
-   * Sub bullets
+
+   1. Create Phone Number (6kyu)
+   2. Adjacent Repeated Words in a String (6kyu)
+   3. Persistent Bugger (6kyu)
+   4. Two Sum (6kyu)
+   5. Calculator (3kyu)
+   6.
 </details>
+
 ---
 
-#### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Create-Phone-Number.js)
+### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Create-Phone-Number.js)
 
 **Problem** (6kyu):
 
