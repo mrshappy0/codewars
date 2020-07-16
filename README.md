@@ -21,13 +21,12 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    4. [Two Sum](https://github.com/mrshappy0/codewars#two-sum--solution) (6kyu)
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
+   7. [Decode the Morse code, advanced]() (4kyu)
 </details>
 
 ---
 
-### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Create-Phone-Number.js)
-
-**Problem** (6kyu):
+### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewarDecode the Morse code, advanced
 
 _Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number._
 
@@ -167,6 +166,78 @@ function domainName(url){
       else if (check2) return domExtract(url.search("www.") + 4)
       else return domExtract(0)
   }
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Decode the Morse code, advanced](https://www.codewars.com/kata/54b72c16cd7f5154e9000457) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Decode-the-Morse-code.js)
+
+**Problem** (4kyu):
+
+In this kata you have to write a Morse code decoder for wired electrical telegraph.
+
+Electric telegraph is operated on a 2-wire line with a key that, when pressed, connects the wires together, which can be detected on a remote station. The Morse code encodes every character being transmitted as a sequence of "dots" (short presses on the key) and "dashes" (long presses on the key).
+
+When transmitting the Morse code, the international standard specifies that:
+
+    "Dot" – is 1 time unit long.
+    "Dash" – is 3 time units long.
+    Pause between dots and dashes in a character – is 1 time unit long.
+    Pause between characters inside a word – is 3 time units long.
+    Pause between words – is 7 time units long.
+
+However, the standard does not specify how long that "time unit" is. And in fact different operators would transmit at different speed. An amateur person may need a few seconds to transmit a single character, a skilled professional can transmit 60 words per minute, and robotic transmitters may go way faster.
+
+For this kata we assume the message receiving is performed automatically by the hardware that checks the line periodically, and if the line is connected (the key at the remote station is down), 1 is recorded, and if the line is not connected (remote key is up), 0 is recorded. After the message is fully received, it gets to you for decoding as a string containing only symbols 0 and 1.
+
+For example, the message HEY JUDE, that is ···· · −·−−   ·−−− ··− −·· · may be received as follows:
+
+1100110011001100000011000000111111001100111111001111110000000000000011001111110011111100111111000000110011001111110000001111110011001100000011
+
+As you may see, this transmission is perfectly accurate according to the standard, and the hardware sampled the line exactly two times per "dot".
+
+That said, your task is to implement two functions:
+
+    Function decodeBits(bits), that should find out the transmission rate of the message, correctly decode the message to dots ., dashes - and spaces (one between characters, three between words) and return those as a string. Note that some extra 0's may naturally occur at the beginning and the end of a message, make sure to ignore them. Also if you have trouble discerning if the particular sequence of 1's is a dot or a dash, assume it's a dot.
+
+2. Function decodeMorse(morseCode), that would take the output of the previous function and return a human-readable string.
+
+NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode characters.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Decode-the-Morse-code.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Decode-the-Morse-code.js -->
+```js
+var decodeBits = function (bits) {
+    let rx1 = /(\s)+/g, rx2 = /(\d)+/g, str = bits.replace(/0/g, " ").replace(/(\d+)/g, `,$1,`);
+    findMin = (regexPattern, string) => Math.min(...(string.match(regexPattern)||[]).map((el) => (el = el.length)));
+    let min= Math.min(findMin(rx2, str),findMin(rx1, str))
+    return str.split(",").map((el) => {
+      if (el.includes("1")) {
+        if (el.length === min) {
+          return (el = ".");
+        } else {
+          return (el = "-");
+        }
+      } else {
+        if (el.length === min) {
+          return (el = "");
+        } else if (el.length === min * 3) {
+          return (el = " ");
+        } else if (el.length === min * 7) {
+          return (el = "   ");
+        }
+      }
+    }).join("");
+  };
+  var decodeMorse = function (morseCode) {
+    morseCode = morseCode.replace(/\s\s\s/g, " _ ").split(" ");
+    morseCode = morseCode.map((el) => {
+      return el === "_" ? (el = " ") : (el = MORSE_CODE[el]);
+    });
+    if (morseCode.join("") === "T") return "E";
+    return morseCode.join("");
+  };
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
