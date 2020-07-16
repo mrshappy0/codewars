@@ -9,6 +9,10 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 ![](kyu-info.png)
 
 ## Table of Contents
+<details><summary>Click to expand all problems!</summary>
+ * random
+ * random
+</details>
 ---
 
 #### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Create-Phone-Number.js)
