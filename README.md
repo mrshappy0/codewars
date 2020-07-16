@@ -13,7 +13,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 ## Table of Contents
 
 <details>
-  <summary>Click for list of links to all problems!</summary>
+  <summary><strong>Click for list of links to all problems!</strong></summary>
 
    1. [Create Phone Number](https://github.com/mrshappy0/codewars#create-phone-number--solution) (6kyu)
    2. [Adjacent Repeated Words in a String](https://github.com/mrshappy0/codewars#adjacent-repeated-words-in-a-string--solution) (6kyu)
@@ -43,7 +43,7 @@ createPhoneNumber = (numbers, n = numbers.join("")) =>
 
 ---
 
-#### [Adjacent Repeated Words in a String](https://www.codewars.com/kata/5245a9138ca049e9a10007b8) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Adjacent-repeated-words-in-a-string.js)
+### [Adjacent Repeated Words in a String](https://www.codewars.com/kata/5245a9138ca049e9a10007b8) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Adjacent-repeated-words-in-a-string.js)
 
 **Problem** (6kyu):
 
@@ -65,7 +65,7 @@ countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
 
 ---
 
-#### [Persistent Bugger](https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Persistent-bugger.js)
+### [Persistent Bugger](https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Persistent-bugger.js)
 
 **Problem** (6kyu):
 
@@ -93,7 +93,7 @@ persistence = (num, i = 0, ar = []) => {
 
 ## <!-- AUTO-GENERATED-CONTENT:END *-->
 
-#### [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Two-Sum.js)
+### [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Two-Sum.js)
 
 **Problem** (6kyu):
 
@@ -121,7 +121,7 @@ function twoSum(numbers, target) {
 
 ## <!-- AUTO-GENERATED-CONTENT:END *-->
 
-#### [Calculator](https://www.codewars.com/kata/5235c913397cbf2508000048) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Calculator.js)
+### [Calculator](https://www.codewars.com/kata/5235c913397cbf2508000048) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Calculator.js)
 
 **Problem** (3kyu):
 
