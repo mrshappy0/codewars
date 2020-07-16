@@ -22,6 +22,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
    7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
+   8. [Human readable duration format]()(4kuy)
+   9. []()()
 </details>
 
 ---
@@ -238,6 +240,89 @@ var decodeBits = function (bits) {
     if (morseCode.join("") === "T") return "E";
     return morseCode.join("");
   };
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Human readable duration format](https://www.codewars.com/kata/52742f58faf5485cae000b9a) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Human-readable-duration-format.js)
+
+**Problem** (4kyu):
+
+Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
+
+The function must accept a non-negative integer. If it is zero, it just returns "now". Otherwise, the duration is expressed as a combination of years, days, hours, minutes and seconds.
+
+It is much easier to understand with an example:
+
+```js
+   formatDuration(62)    // returns "1 minute and 2 seconds"
+   formatDuration(3662)  // returns "1 hour, 1 minute and 2 seconds"
+```
+
+For the purpose of this Kata, a year is 365 days and a day is 24 hours.
+
+Note that spaces are important.
+Detailed rules
+
+The resulting expression is made of components like 4 seconds, 1 year, etc. In general, a positive integer and one of the valid units of time, separated by a space. The unit of time is used in plural if the integer is greater than 1.
+
+The components are separated by a comma and a space (", "). Except the last component, which is separated by " and ", just like it would be written in English.
+
+A more significant units of time will occur before than a least significant one. Therefore, 1 second and 1 year is not correct, but 1 year and 1 second is.
+
+Different components have different unit of times. So there is not repeated units like in 5 seconds and 1 second.
+
+A component will not appear at all if its value happens to be zero. Hence, 1 minute and 0 seconds is not valid, but it should be just 1 minute.
+
+A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
+
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Human-readable-duration-format.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Human-readable-duration-format.js -->
+```js
+function formatDuration(seconds) {
+  let t = [],
+    t_rem = [],
+    unit = ["second", "minute", "hour", "day", "year"];
+  if (seconds === 0) return "now";
+  t_rem[0] = seconds % 60;
+  t[1] = (seconds - t_rem[0]) / 60;
+  t_rem[1] = t[1] % 60;
+  t[2] = (t[1] - t_rem[1]) / 60;
+  t_rem[2] = t[2] % 24;
+  t[3] = (t[2] - t_rem[2]) / 24;
+  t_rem[3] = t[3] % 365;
+  t_rem[4] = (t[3] - t_rem[3]) / 365;
+
+  let len = t_rem.filter((l) => l).length;
+
+  function stringify(timeVar, strMod) {
+    return timeVar
+      ? `${timeVar} ${strMod}` + `${timeVar !== 1 ? "s" : ""},`
+      : "";
+  }
+
+  let i = 4;
+  while (i >= 0) {
+    t_rem[i] = stringify(t_rem[i], unit[i]);
+    i--;
+  }
+
+  t_rem = t_rem.reverse().filter((l) => l);
+  if (t_rem.length > 1) {
+    let secl_el = t_rem[t_rem.length - 2];
+    t_rem[t_rem.length - 2] = secl_el.substring(0, secl_el.length - 1);
+    t_rem.splice(-1, 0, "and");
+  }
+  let last_el = t_rem[t_rem.length - 1];
+  last_el = last_el.substring(0, last_el.length - 1);
+  t_rem[t_rem.length - 1] = t_rem[t_rem.length - 1].substring(
+    0,
+    t_rem[t_rem.length - 1].length - 1
+  );
+  return t_rem.join(" ");
+}
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
