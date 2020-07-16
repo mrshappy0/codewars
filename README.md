@@ -23,7 +23,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
    7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
    8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution)(4kuy)
-   9. [Count the smiley faces!]()(6kyu)
+   9. [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution)(6kyu)
 </details>
 
 ---
