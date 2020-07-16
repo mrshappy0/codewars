@@ -24,7 +24,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
    8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution)(4kuy)
    9. [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution)(6kyu)
-   10. [Snakes and Ladders]()(5kyu)
+   10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution)(5kyu)
 </details>
 
 ---
