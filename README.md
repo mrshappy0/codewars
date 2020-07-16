@@ -21,7 +21,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    4. [Two Sum](https://github.com/mrshappy0/codewars#two-sum--solution) (6kyu)
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
-   7. [Decode the Morse code, advanced]() (4kyu)
+   7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
 </details>
 
 ---
