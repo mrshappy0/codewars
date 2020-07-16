@@ -12,12 +12,11 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ## Table of Contents
 
-<details><summary>Click to expand all problems!</summary>
-## Heading
-  1. A numbered
-  2. list
-    * With some
-    * Sub bullets
+<details>
+  <summary>Click to expand!</summary>
+  
+   * With some
+   * Sub bullets
 </details>
 ---
 
