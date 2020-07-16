@@ -1,0 +1,1 @@
+countSmileys = arr=> ((arr = arr.toString().match(/[;:][~-]?[)D]/g))? arr : "").length

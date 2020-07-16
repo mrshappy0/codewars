@@ -22,8 +22,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
    7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
-   8. [Human readable duration format]()(4kuy)
-   9. []()()
+   8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution)(4kuy)
+   9. [Count the smiley faces!]()(6kyu)
 </details>
 
 ---
@@ -323,6 +323,41 @@ function formatDuration(seconds) {
   );
   return t_rem.join(" ");
 }
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Count the smiley faces!](https://www.codewars.com/kata/583203e6eb35d7980400002a) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Count-the-smiley-faces.js)
+
+**Problem** (4kyu):
+
+Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+Rules for a smiling face:
+
+* Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+* A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+* Every smiling face must have a smiling mouth that should be marked with either ) or D
+
+No additional characters are allowed except for those mentioned.
+
+Valid smiley face examples: :) :D ;-D :~)
+Invalid smiley faces: ;( :> :} :]
+Example
+
+```js
+countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
+```
+Note: In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Count-the-smiley-faces.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Count-the-smiley-faces.js -->
+```js
+countSmileys = arr=> ((arr = arr.toString().match(/[;:][~-]?[)D]/g))? arr : "").length
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
