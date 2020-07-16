@@ -12,7 +12,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ## Table of Contents
 
-<details>
+## <details>
   <summary><strong>Click for list of links to all problems!</strong></summary>
 
    1. [Create Phone Number](https://github.com/mrshappy0/codewars#create-phone-number--solution) (6kyu)
