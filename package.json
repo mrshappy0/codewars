@@ -19,5 +19,6 @@
   "homepage": "https://github.com/mrshappy0/codewars#readme",
   "devDependencies": {
     "markdown-magic": "^1.0.0"
-  }
+  },
+  "dependencies": {}
 }

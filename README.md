@@ -8,6 +8,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ![](kyu-info.png)
 
+## Table of Contents
 ---
 
 #### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Create-Phone-Number.js)
@@ -96,5 +97,38 @@ function twoSum(numbers, target) {
     });
   return arr;
 }
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+---
+
+#### [Calculator](https://www.codewars.com/kata/5235c913397cbf2508000048) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Calculator.js)
+
+**Problem** (3kyu):
+
+_Create a simple calculator that given a string of operators (), +, -, *, / and numbers separated by spaces returns the value of that expression_
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Calculator.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Calculator.js -->
+```js
+const Calculator = function () {
+  this.evaluate = (string) => {
+    let m = /(\S*)(\s)([/*])(\s)(\S*)/,
+      s = /(\S*)(\s)([-+])(\s)(\S*)/;
+    mOrD = (str) => {
+      let finalStr = str.replace(m, (match, p1, p2, p3, p4, p5) => {
+        return p3 === "/" ? Number(p1) / Number(p5) : Number(p1) * Number(p5);
+      });
+      return finalStr === str ? finalStr : mOrD(finalStr);
+    };
+    string = mOrD(string);
+    aOrS = (str) => {
+      let finalStr = str.replace(s, (match, p1, p2, p3, p4, p5) => {
+        return p3 === "-" ? Number(p1) - Number(p5) : Number(p1) + Number(p5);
+      });
+      return finalStr === str ? finalStr : aOrS(finalStr);
+    };
+    return (string = aOrS(string));
+  };
+};
 ```
 <!-- AUTO-GENERATED-CONTENT:END *-->
