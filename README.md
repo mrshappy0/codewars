@@ -13,10 +13,10 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 ## Table of Contents
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Click for list of links to all problems!</summary>
 
    1. [Create Phone Number (6kyu)](https://github.com/mrshappy0/codewars#create-phone-number--solution)
-   2. Adjacent Repeated Words in a String (6kyu)
+   2. [Adjacent Repeated Words in a String](https://github.com/mrshappy0/codewars#adjacent-repeated-words-in-a-string--solution) (6kyu)
    3. Persistent Bugger (6kyu)
    4. Two Sum (6kyu)
    5. Calculator (3kyu)
