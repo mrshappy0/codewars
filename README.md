@@ -10,8 +10,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ## Table of Contents
 <details><summary>Click to expand all problems!</summary>
- * random
- * random
+* Item 1
+* Item 2
 </details>
 ---
 
