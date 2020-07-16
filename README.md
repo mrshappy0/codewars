@@ -12,7 +12,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ## Table of Contents
 
-## <details>
+<details>
   <summary><strong>Click for list of links to all problems!</strong></summary>
 
    1. [Create Phone Number](https://github.com/mrshappy0/codewars#create-phone-number--solution) (6kyu)
@@ -20,7 +20,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    3. [Persistent Bugger](persistent-bugger--solution) (6kyu)
    4. [Two Sum](https://github.com/mrshappy0/codewars#two-sum--solution) (6kyu)
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
-   6.
+   6. [Extract the domain name from a URL]() (5kyu)
 </details>
 
 ---
@@ -33,12 +33,10 @@ _Write a function that accepts an array of 10 integers (between 0 and 9), that r
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Create-Phone-Number.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Create-Phone-Number.js -->
-
 ```js
 createPhoneNumber = (numbers, n = numbers.join("")) =>
   `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -55,12 +53,10 @@ _Write a function that counts the number of sections repeating the same word (ca
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Adjacent-repeated-words-in-a-string.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Adjacent-repeated-words-in-a-string.js -->
-
 ```js
 countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
   searchString === "" ? 0 : (searchString.match(p1) || []).length;
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -73,7 +69,6 @@ _Write a function, persistence, that takes in a positive parameter num and retur
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Persistent-bugger.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Persistent-bugger.js -->
-
 ```js
 persistence = (num, i = 0, ar = []) => {
   return num
@@ -90,8 +85,9 @@ persistence = (num, i = 0, ar = []) => {
       );
 };
 ```
+<!-- AUTO-GENERATED-CONTENT:END *-->
 
-## <!-- AUTO-GENERATED-CONTENT:END *-->
+---
 
 ### [Two Sum](https://www.codewars.com/kata/52c31f8e6605bcc646000082) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Two-Sum.js)
 
@@ -105,7 +101,6 @@ _The input will always be valid (numbers will be an array of length 2 or greater
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Two-Sum.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Two-Sum.js -->
-
 ```js
 function twoSum(numbers, target) {
   let arr = [],
@@ -118,8 +113,9 @@ function twoSum(numbers, target) {
   return arr;
 }
 ```
+<!-- AUTO-GENERATED-CONTENT:END *-->
 
-## <!-- AUTO-GENERATED-CONTENT:END *-->
+---
 
 ### [Calculator](https://www.codewars.com/kata/5235c913397cbf2508000048) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Calculator.js)
 
@@ -129,7 +125,6 @@ _Create a simple calculator that given a string of operators (), +, -, \*, / and
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Calculator.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Calculator.js -->
-
 ```js
 const Calculator = function () {
   this.evaluate = (string) => {
@@ -152,5 +147,27 @@ const Calculator = function () {
   };
 };
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Extract-the-domain-name-from-a-URL.js)
+
+**Problem** (5kyu):
+
+Write a function that when given a URL as a string, parses out just the domain name and returns it as a string.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Extract-the-domain-name-from-a-URL.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Extract-the-domain-name-from-a-URL.js -->
+```js
+function domainName(url){
+    let p1 = /[\w-]*(?=\.)/g, check1 = url.includes("//"), check2 = url.includes("www.")
+    domExtract = index => url.slice(index).match(p1)[0]
+    if(check1) return check2 ? domExtract(url.search("www.")+4) : domExtract(url.search(/[/]{2}/g)+2)
+      else if (check2) return domExtract(url.search("www.") + 4)
+      else return domExtract(0)
+  }
+```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
