@@ -452,7 +452,7 @@ function SnakesLadders() {
 Given a Sudoku data structure with size NxN, N > 0 and √N == integer, write a method to validate if it has been filled out correctly.
 
 The data structure is a multi-dimensional Array, i.e:
-
+```js
 [
   [7,8,4,  1,5,9,  3,2,6],
   [5,3,9,  6,7,2,  8,4,1],
@@ -466,7 +466,7 @@ The data structure is a multi-dimensional Array, i.e:
   [2,4,3,  5,6,1,  9,7,8],
   [1,9,5,  2,8,7,  6,3,4]
 ]
-
+```
 Rules for validation:
 
 Data structure dimension: NxN where N > 0 and √N == integer
