@@ -22,9 +22,10 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
    5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
    6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
    7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
-   8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution)(4kuy)
-   9. [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution)(6kyu)
-   10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution)(5kyu)
+   8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution) (4kuy)
+   9. [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution) (6kyu)
+   10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
+   11. [Validate Sudoku with size 'NxN']()(4kyu)
 </details>
 
 ---
@@ -440,6 +441,70 @@ function SnakesLadders() {
     return gameMessage;
   };
 ```
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Validate Sudoku with size `NxN`](https://www.codewars.com/kata/540afbe2dc9f615d5e000425) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Validate-sudoku-nxn.js)
+
+**Problem** (4kyu):
+
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Validate-sudoku-nxn.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
+```js
+var Sudoku = function (data) {
+    return {
+      isValid: function () {
+        let i = 0,j = 0,end;
+
+        //    check rows
+        while (i < data.length) {
+          let arr = [...new Set(data[i])];
+          arr.filter((el) => el <= data.length && el > 0);
+          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
+          i++;
+        }
+        i = 0;
+
+        //    check columns
+        while (i < data.length && end) {
+          let set = new Set(),arr = [];
+          while (j < data.length) {
+            if (data[j][i] <= data.length && data[j][i] > 0) set.add(data[j][i]);
+            j++;
+          }
+          arr = [...set];
+          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
+          j = 0;
+          i++;
+        }
+
+        //    little squares check
+        if (data.length === 9 && end) {
+          recursiveBoi = (someData) => {
+            someData = someData.filter((el) => el != null && el != "");
+            if (!someData[0]) {
+              return true;
+            } else {
+              let arr = [],set = new Set();
+              for (let i = 0; i < 3; i++) {
+                arr.push(...someData[i].splice(0, 3));
+              }
+              arr = [...new Set(arr)];
+              arr.filter((el) => el <= data.length && el > 0);
+              (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? recursiveBoi(someData) : end = false
+            }
+          }
+          recursiveBoi(data);
+        }
+
+        return end;
+      },
+    };
+  };
+```
+<!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
