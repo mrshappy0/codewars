@@ -27,7 +27,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
 11. [Validate Sudoku with size 'NxN'](https://github.com/mrshappy0/codewars#validate-sudoku-with-size-nxn--solution)(4kyu)
 12. [RGB to hex conversion](https://github.com/mrshappy0/codewars#rgb-to-hex-conversion--solution)(5kyu)
-12. [Beeramid](https://github.com/mrshappy0/codewars#beeramid--solution)(5kyu)
+13. [Beeramid](https://github.com/mrshappy0/codewars#beeramid--solution)(5kyu)
+14. [The hashtag generator](https://github.com/mrshappy0/codewars#The-hashtag-generator--solution)(5kyu)
 
 </details>
 
@@ -39,10 +40,12 @@ _Write a function that accepts an array of 10 integers (between 0 and 9), that r
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Create-Phone-Number.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Create-Phone-Number.js -->
+
 ```js
 createPhoneNumber = (numbers, n = numbers.join("")) =>
   `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -59,10 +62,12 @@ _Write a function that counts the number of sections repeating the same word (ca
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Adjacent-repeated-words-in-a-string.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Adjacent-repeated-words-in-a-string.js -->
+
 ```js
 countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
   searchString === "" ? 0 : (searchString.match(p1) || []).length;
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -75,6 +80,7 @@ _Write a function, persistence, that takes in a positive parameter num and retur
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Persistent-bugger.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Persistent-bugger.js -->
+
 ```js
 persistence = (num, i = 0, ar = []) => {
   return num
@@ -91,6 +97,7 @@ persistence = (num, i = 0, ar = []) => {
       );
 };
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -107,6 +114,7 @@ _The input will always be valid (numbers will be an array of length 2 or greater
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Two-Sum.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Two-Sum.js -->
+
 ```js
 function twoSum(numbers, target) {
   let arr = [],
@@ -119,6 +127,7 @@ function twoSum(numbers, target) {
   return arr;
 }
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -131,6 +140,7 @@ _Create a simple calculator that given a string of operators (), +, -, \*, / and
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Calculator.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Calculator.js -->
+
 ```js
 const Calculator = function () {
   this.evaluate = (string) => {
@@ -153,6 +163,7 @@ const Calculator = function () {
   };
 };
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -165,15 +176,22 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Extract-the-domain-name-from-a-URL.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Extract-the-domain-name-from-a-URL.js -->
+
 ```js
-function domainName(url){
-    let p1 = /[\w-]*(?=\.)/g, check1 = url.includes("//"), check2 = url.includes("www.")
-    domExtract = index => url.slice(index).match(p1)[0]
-    if(check1) return check2 ? domExtract(url.search("www.")+4) : domExtract(url.search(/[/]{2}/g)+2)
-      else if (check2) return domExtract(url.search("www.") + 4)
-      else return domExtract(0)
-  }
+function domainName(url) {
+  let p1 = /[\w-]*(?=\.)/g,
+    check1 = url.includes("//"),
+    check2 = url.includes("www.");
+  domExtract = (index) => url.slice(index).match(p1)[0];
+  if (check1)
+    return check2
+      ? domExtract(url.search("www.") + 4)
+      : domExtract(url.search(/[/]{2}/g) + 2);
+  else if (check2) return domExtract(url.search("www.") + 4);
+  else return domExtract(0);
+}
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -214,12 +232,20 @@ NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode 
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Decode-the-Morse-code.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Decode-the-Morse-code.js -->
+
 ```js
 var decodeBits = function (bits) {
-    let rx1 = /(\s)+/g, rx2 = /(\d)+/g, str = bits.replace(/0/g, " ").replace(/(\d+)/g, `,$1,`);
-    findMin = (regexPattern, string) => Math.min(...(string.match(regexPattern)||[]).map((el) => (el = el.length)));
-    let min= Math.min(findMin(rx2, str),findMin(rx1, str))
-    return str.split(",").map((el) => {
+  let rx1 = /(\s)+/g,
+    rx2 = /(\d)+/g,
+    str = bits.replace(/0/g, " ").replace(/(\d+)/g, `,$1,`);
+  findMin = (regexPattern, string) =>
+    Math.min(
+      ...(string.match(regexPattern) || []).map((el) => (el = el.length))
+    );
+  let min = Math.min(findMin(rx2, str), findMin(rx1, str));
+  return str
+    .split(",")
+    .map((el) => {
       if (el.includes("1")) {
         if (el.length === min) {
           return (el = ".");
@@ -235,17 +261,19 @@ var decodeBits = function (bits) {
           return (el = "   ");
         }
       }
-    }).join("");
-  };
-  var decodeMorse = function (morseCode) {
-    morseCode = morseCode.replace(/\s\s\s/g, " _ ").split(" ");
-    morseCode = morseCode.map((el) => {
-      return el === "_" ? (el = " ") : (el = MORSE_CODE[el]);
-    });
-    if (morseCode.join("") === "T") return "E";
-    return morseCode.join("");
-  };
+    })
+    .join("");
+};
+var decodeMorse = function (morseCode) {
+  morseCode = morseCode.replace(/\s\s\s/g, " _ ").split(" ");
+  morseCode = morseCode.map((el) => {
+    return el === "_" ? (el = " ") : (el = MORSE_CODE[el]);
+  });
+  if (morseCode.join("") === "T") return "E";
+  return morseCode.join("");
+};
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -284,6 +312,7 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Human-readable-duration-format.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Human-readable-duration-format.js -->
+
 ```js
 function formatDuration(seconds) {
   let t = [],
@@ -328,6 +357,7 @@ function formatDuration(seconds) {
   return t_rem.join(" ");
 }
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -360,9 +390,12 @@ Note: In case of an empty array return 0. You will not be tested with invalid in
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Count-the-smiley-faces.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Count-the-smiley-faces.js -->
+
 ```js
-countSmileys = arr=> ((arr = arr.toString().match(/[;:][~-]?[)D]/g))? arr : "").length
+countSmileys = (arr) =>
+  ((arr = arr.toString().match(/[;:][~-]?[)D]/g)) ? arr : "").length;
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -401,49 +434,78 @@ Otherwise return Player n is on square x. Where n is the current player and x is
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Snakes-and-Ladders.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Snakes-and-Ladders.js -->
+
 ```js
 function SnakesLadders() {
-    gameStats.start();
-  }
-  let gameStats = {
-    pos: {p1: 0,p2: 0},
-    p1turn: true,
-    ladders: {"2":38, "7":14, "8":31, "15":26, "21":42, "28":84, "36":44, "51":67, "71":91, "78":98, "87":94},
-    snakes: {"16":6, "46":25, "49":11, "62":19, "64":60, "74":53, "89":68, "92":88, "95":75, "99":80},
-    start: function () {
-      this.pos.p1 = 0;
-      this.pos.p2 = 0;
-      this.p1turn = true;
-    },
+  gameStats.start();
+}
+let gameStats = {
+  pos: { p1: 0, p2: 0 },
+  p1turn: true,
+  ladders: {
+    2: 38,
+    7: 14,
+    8: 31,
+    15: 26,
+    21: 42,
+    28: 84,
+    36: 44,
+    51: 67,
+    71: 91,
+    78: 98,
+    87: 94,
+  },
+  snakes: {
+    16: 6,
+    46: 25,
+    49: 11,
+    62: 19,
+    64: 60,
+    74: 53,
+    89: 68,
+    92: 88,
+    95: 75,
+    99: 80,
+  },
+  start: function () {
+    this.pos.p1 = 0;
+    this.pos.p2 = 0;
+    this.p1turn = true;
+  },
+};
+SnakesLadders.prototype.play = function (die1, die2) {
+  const dieSum = die1 + die2;
+  let gameMessage = "";
+  if (gameStats.pos.p1 == 100 || gameStats.pos.p2 == 100) return "Game over!";
+  sOrLs = (player) => {
+    if (Object.keys(gameStats.ladders).includes(`${gameStats.pos[player]}`)) {
+      gameStats.pos[player] = gameStats.ladders[`${gameStats.pos[player]}`];
+    }
+    if (Object.keys(gameStats.snakes).includes(`${gameStats.pos[player]}`)) {
+      gameStats.pos[player] = gameStats.snakes[`${gameStats.pos[player]}`];
+    }
   };
-  SnakesLadders.prototype.play = function (die1, die2) {
-    const dieSum = die1 + die2; let gameMessage = "";
-    if (gameStats.pos.p1 == 100 || gameStats.pos.p2 == 100) return "Game over!";
-    sOrLs = player => {
-      if (Object.keys(gameStats.ladders).includes(`${gameStats.pos[player]}`)) {
-        gameStats.pos[player] = gameStats.ladders[`${gameStats.pos[player]}`];
-      }
-      if (Object.keys(gameStats.snakes).includes(`${gameStats.pos[player]}`)) {
-        gameStats.pos[player] = gameStats.snakes[`${gameStats.pos[player]}`];
-      }
-    }
-    over100 = (player, sum)=> {
-      if (gameStats.pos[player] > 100) {
-        gameStats.pos[player] = 100 - (sum - (100 - (gameStats.pos[player] - sum)));
-        sOrLs(player);
-      }
-    }
-    turnMovement = player =>{
-      gameStats.pos[player] += dieSum;
+  over100 = (player, sum) => {
+    if (gameStats.pos[player] > 100) {
+      gameStats.pos[player] =
+        100 - (sum - (100 - (gameStats.pos[player] - sum)));
       sOrLs(player);
-      over100(player, dieSum);
-      gameStats.pos[player] == 100 ? (gameMessage = `Player ${player[1]} Wins!`) : (gameMessage = `Player ${player[1]} is on square ${gameStats.pos[player]}`);
     }
-    gameStats.p1turn ? turnMovement("p1") : turnMovement("p2")
-    if (die1 !== die2) gameStats.p1turn = !gameStats.p1turn;
-    return gameMessage;
   };
+  turnMovement = (player) => {
+    gameStats.pos[player] += dieSum;
+    sOrLs(player);
+    over100(player, dieSum);
+    gameStats.pos[player] == 100
+      ? (gameMessage = `Player ${player[1]} Wins!`)
+      : (gameMessage = `Player ${player[1]} is on square ${gameStats.pos[player]}`);
+  };
+  gameStats.p1turn ? turnMovement("p1") : turnMovement("p2");
+  if (die1 !== die2) gameStats.p1turn = !gameStats.p1turn;
+  return gameMessage;
+};
 ```
+
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -481,58 +543,70 @@ Columns may only contain integers: 1..N (N included)
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Validate-sudoku-nxn.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
+
 ```js
 var Sudoku = function (data) {
-    return {
-      isValid: function () {
-        let i = 0,j = 0,end;
+  return {
+    isValid: function () {
+      let i = 0,
+        j = 0,
+        end;
 
-        //    check rows
-        while (i < data.length) {
-          let arr = [...new Set(data[i])];
-          arr.filter((el) => el <= data.length && el > 0);
-          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
-          i++;
+      //    check rows
+      while (i < data.length) {
+        let arr = [...new Set(data[i])];
+        arr.filter((el) => el <= data.length && el > 0);
+        data.length === arr.length && arr[0] !== "" && arr[0] !== true
+          ? (end = true)
+          : (end = false);
+        i++;
+      }
+      i = 0;
+
+      //    check columns
+      while (i < data.length && end) {
+        let set = new Set(),
+          arr = [];
+        while (j < data.length) {
+          if (data[j][i] <= data.length && data[j][i] > 0) set.add(data[j][i]);
+          j++;
         }
-        i = 0;
+        arr = [...set];
+        data.length === arr.length && arr[0] !== "" && arr[0] !== true
+          ? (end = true)
+          : (end = false);
+        j = 0;
+        i++;
+      }
 
-        //    check columns
-        while (i < data.length && end) {
-          let set = new Set(),arr = [];
-          while (j < data.length) {
-            if (data[j][i] <= data.length && data[j][i] > 0) set.add(data[j][i]);
-            j++;
-          }
-          arr = [...set];
-          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
-          j = 0;
-          i++;
-        }
-
-        //    little squares check
-        if (data.length === 9 && end) {
-          recursiveBoi = (someData) => {
-            someData = someData.filter((el) => el != null && el != "");
-            if (!someData[0]) {
-              return true;
-            } else {
-              let arr = [],set = new Set();
-              for (let i = 0; i < 3; i++) {
-                arr.push(...someData[i].splice(0, 3));
-              }
-              arr = [...new Set(arr)];
-              arr.filter((el) => el <= data.length && el > 0);
-              (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? recursiveBoi(someData) : end = false
+      //    little squares check
+      if (data.length === 9 && end) {
+        recursiveBoi = (someData) => {
+          someData = someData.filter((el) => el != null && el != "");
+          if (!someData[0]) {
+            return true;
+          } else {
+            let arr = [],
+              set = new Set();
+            for (let i = 0; i < 3; i++) {
+              arr.push(...someData[i].splice(0, 3));
             }
+            arr = [...new Set(arr)];
+            arr.filter((el) => el <= data.length && el > 0);
+            data.length === arr.length && arr[0] !== "" && arr[0] !== true
+              ? recursiveBoi(someData)
+              : (end = false);
           }
-          recursiveBoi(data);
-        }
+        };
+        recursiveBoi(data);
+      }
 
-        return end;
-      },
-    };
+      return end;
+    },
   };
+};
 ```
+
 <!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -557,6 +631,7 @@ rgb(148, 0, 211); // returns 9400D3
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/RGB-to-hex.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
+
 ```js
 let rgb = (r, g, b, Z = 0) =>
   [r, g, b]
@@ -566,12 +641,13 @@ let rgb = (r, g, b, Z = 0) =>
     .join("")
     .toUpperCase();
 ```
+
 <!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
 
-### [Beeramid](https://www.codewars.com/kata/51e04f6b544cf3f6550000c1) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/beeramid.js)
+### [Beeramid](https://www.codewars.com/kata/52449b062fb80683ec000024) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/beeramid.js)
 
 **Problem** (5kyu):
 
@@ -588,12 +664,13 @@ Complete the beeramid function to return the number of complete levels of a beer
 For example:
 
 ```js
-  beeramid(1500, 2); // should === 12
-  beeramid(5000, 3); // should === 16
+beeramid(1500, 2); // should === 12
+beeramid(5000, 3); // should === 16
 ```
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Beeramid.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Beeramid.js -->
+
 ```js
 var beeramid = function (bonus, price) {
   let i = 1,
@@ -605,5 +682,40 @@ var beeramid = function (bonus, price) {
   return i - 2;
 };
 ```
-<!-- The below code snippet is automatically added from ./js-solutions/Beeramid.js -->
+
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+### [The Hashtag Generator](https://www.codewars.com/kata/51e04f6b544cf3f6550000c1) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/The-hashtag-generator.js)
+
+**Problem** (5kyu):
+
+The marketing team is spending way too much time typing in hashtags.
+Let's help them with our own Hashtag Generator!
+
+Here's the deal:
+
+- It must start with a hashtag (#).
+- All words must have their first letter capitalized.
+- If the final result is longer than 140 chars it must return false.
+- If the input or the result is an empty string it must return false.
+
+" Hello there thanks for trying my Kata" => "#HelloThereThanksForTryingMyKata"
+" Hello World " => "#HelloWorld"
+"" => false
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/The-hashtag-generator.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/The-hashtag-generator.js -->
+
+```js
+function generateHashtag(str) {
+  if (!str.trim()) return false;
+  str = str
+    .split(" ")
+    .map((e) => e.charAt(0).toUpperCase() + e.slice(1))
+    .join("");
+  return str.length >= 140 ? false : `#${str}`;
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/The-hashtag-generator.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
