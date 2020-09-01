@@ -15,17 +15,17 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 <details>
   <summary><strong>Click for list of links to all problems!</strong></summary>
 
-   1. [Create Phone Number](https://github.com/mrshappy0/codewars#create-phone-number--solution) (6kyu)
-   2. [Adjacent Repeated Words in a String](https://github.com/mrshappy0/codewars#adjacent-repeated-words-in-a-string--solution) (6kyu)
-   3. [Persistent Bugger](persistent-bugger--solution) (6kyu)
-   4. [Two Sum](https://github.com/mrshappy0/codewars#two-sum--solution) (6kyu)
-   5. [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
-   6. [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
-   7. [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
-   8. [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution) (4kuy)
-   9. [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution) (6kyu)
-   10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
-   11. [Validate Sudoku with size 'NxN'](https://github.com/mrshappy0/codewars#validate-sudoku-with-size-nxn--solution)(4kyu)
+1.  [Create Phone Number](https://github.com/mrshappy0/codewars#create-phone-number--solution) (6kyu)
+2.  [Adjacent Repeated Words in a String](https://github.com/mrshappy0/codewars#adjacent-repeated-words-in-a-string--solution) (6kyu)
+3.  [Persistent Bugger](persistent-bugger--solution) (6kyu)
+4.  [Two Sum](https://github.com/mrshappy0/codewars#two-sum--solution) (6kyu)
+5.  [Calculator](https://github.com/mrshappy0/codewars#calculator--solution) (3kyu)
+6.  [Extract the domain name from a URL](https://github.com/mrshappy0/codewars#extract-the-domain-name-from-a-url--solution) (5kyu)
+7.  [Decode the Morse code, advanced](https://github.com/mrshappy0/codewars#decode-the-morse-code-advanced--solution) (4kyu)
+8.  [Human readable duration format](https://github.com/mrshappy0/codewars#human-readable-duration-format--solution) (4kuy)
+9.  [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution) (6kyu)
+10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
+11. [Validate Sudoku with size 'NxN'](https://github.com/mrshappy0/codewars#validate-sudoku-with-size-nxn--solution)(4kyu)
 </details>
 
 ---
@@ -195,7 +195,7 @@ However, the standard does not specify how long that "time unit" is. And in fact
 
 For this kata we assume the message receiving is performed automatically by the hardware that checks the line periodically, and if the line is connected (the key at the remote station is down), 1 is recorded, and if the line is not connected (remote key is up), 0 is recorded. After the message is fully received, it gets to you for decoding as a string containing only symbols 0 and 1.
 
-For example, the message HEY JUDE, that is ···· · −·−−   ·−−− ··− −·· · may be received as follows:
+For example, the message HEY JUDE, that is ···· · −·−− ·−−− ··− −·· · may be received as follows:
 
 1100110011001100000011000000111111001100111111001111110000000000000011001111110011111100111111000000110011001111110000001111110011001100000011
 
@@ -258,8 +258,8 @@ The function must accept a non-negative integer. If it is zero, it just returns 
 It is much easier to understand with an example:
 
 ```js
-   formatDuration(62)    // returns "1 minute and 2 seconds"
-   formatDuration(3662)  // returns "1 hour, 1 minute and 2 seconds"
+formatDuration(62); // returns "1 minute and 2 seconds"
+formatDuration(3662); // returns "1 hour, 1 minute and 2 seconds"
 ```
 
 For the purpose of this Kata, a year is 365 days and a day is 24 hours.
@@ -278,7 +278,6 @@ Different components have different unit of times. So there is not repeated unit
 A component will not appear at all if its value happens to be zero. Hence, 1 minute and 0 seconds is not valid, but it should be just 1 minute.
 
 A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
-
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Human-readable-duration-format.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Human-readable-duration-format.js -->
@@ -338,9 +337,9 @@ Given an array (arr) as an argument complete the function countSmileys that shou
 
 Rules for a smiling face:
 
-* Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
-* A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
-* Every smiling face must have a smiling mouth that should be marked with either ) or D
+- Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+- A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+- Every smiling face must have a smiling mouth that should be marked with either ) or D
 
 No additional characters are allowed except for those mentioned.
 
@@ -349,12 +348,12 @@ Invalid smiley faces: ;( :> :} :]
 Example
 
 ```js
-countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
-countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
-countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
+countSmileys([":)", ";(", ";}", ":-D"]); // should return 2;
+countSmileys([";D", ":-(", ":-)", ";~)"]); // should return 3;
+countSmileys([";]", ":[", ";*", ":$", ";-D"]); // should return 1;
 ```
-Note: In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
 
+Note: In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Count-the-smiley-faces.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Count-the-smiley-faces.js -->
@@ -373,6 +372,7 @@ countSmileys = arr=> ((arr = arr.toString().match(/[;:][~-]?[)D]/g))? arr : "").
 Your task is to make a simple class called SnakesLadders. The test cases will call the method play(die1, die2) independantly of the state of the game or the player turn. The variables die1 and die2 are the die thrown in a turn and are both integers between 1 and 6. The player will move the sum of die1 and die2.
 
 **Rules:**
+
 1.  There are two players and both start off the board on square 0.
 
 2.  Player 1 starts and alternates with player 2.
@@ -452,29 +452,29 @@ function SnakesLadders() {
 Given a Sudoku data structure with size NxN, N > 0 and √N == integer, write a method to validate if it has been filled out correctly.
 
 The data structure is a multi-dimensional Array, i.e:
+
 ```js
 [
-  [7,8,4,  1,5,9,  3,2,6],
-  [5,3,9,  6,7,2,  8,4,1],
-  [6,1,2,  4,3,8,  7,5,9],
+  [7, 8, 4, 1, 5, 9, 3, 2, 6],
+  [5, 3, 9, 6, 7, 2, 8, 4, 1],
+  [6, 1, 2, 4, 3, 8, 7, 5, 9],
 
-  [9,2,8,  7,1,5,  4,6,3],
-  [3,5,7,  8,4,6,  1,9,2],
-  [4,6,1,  9,2,3,  5,8,7],
+  [9, 2, 8, 7, 1, 5, 4, 6, 3],
+  [3, 5, 7, 8, 4, 6, 1, 9, 2],
+  [4, 6, 1, 9, 2, 3, 5, 8, 7],
 
-  [8,7,6,  3,9,4,  2,1,5],
-  [2,4,3,  5,6,1,  9,7,8],
-  [1,9,5,  2,8,7,  6,3,4]
-]
+  [8, 7, 6, 3, 9, 4, 2, 1, 5],
+  [2, 4, 3, 5, 6, 1, 9, 7, 8],
+  [1, 9, 5, 2, 8, 7, 6, 3, 4],
+];
 ```
+
 Rules for validation:
 
 Data structure dimension: NxN where N > 0 and √N == integer
 Rows may only contain integers: 1..N (N included)
 Columns may only contain integers: 1..N (N included)
 'Little squares' (3x3 in example above) may also only contain integers: 1..N (N included)
-
-
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Validate-sudoku-nxn.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
@@ -534,3 +534,34 @@ var Sudoku = function (data) {
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
+
+### [RGB To Hex Conversion](https://www.codewars.com/kata/513e08acc600c94f01000001) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/RGB-to-hex.js)
+
+**Problem** (5kyu):
+
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+The following are examples of expected output values:
+
+```js
+rgb(255, 255, 255); // returns FFFFFF
+rgb(255, 255, 300); // returns FFFFFF
+rgb(0, 0, 0); // returns 000000
+rgb(148, 0, 211); // returns 9400D3
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/RGB-to-hex.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
+```js
+let rgb = (r, g, b, Z = 0) =>
+  [r, g, b]
+    .map((l) =>
+      ("0" + (l > 255 ? "FF" : l <= 0 ? "00" : l).toString(16)).slice(-2)
+    )
+    .join("")
+    .toUpperCase();
+```
+<!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
