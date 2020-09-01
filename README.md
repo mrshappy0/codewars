@@ -35,6 +35,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 18. [Range Extraction](https://github.com/mrshappy0/codewars#Range-Extraction--solution)(4kyu)
 19. [Josephus Permutation](https://github.com/mrshappy0/codewars#Josephus-Permutation--solution)(5kyu)
 20. [Strip Comments](https://github.com/mrshappy0/codewars#Strip-Comments--solution)(4kyu)
+20. [Ones and Zeros](https://github.com/mrshappy0/codewars#Ones-and-Zeros--solution)(7kyu)
 
 </details>
 
@@ -46,12 +47,10 @@ _Write a function that accepts an array of 10 integers (between 0 and 9), that r
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Create-Phone-Number.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Create-Phone-Number.js -->
-
 ```js
 createPhoneNumber = (numbers, n = numbers.join("")) =>
   `(${n.slice(0, 3)}) ${n.slice(3, 6)}-${n.slice(6, 10)}`;
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -68,12 +67,10 @@ _Write a function that counts the number of sections repeating the same word (ca
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Adjacent-repeated-words-in-a-string.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Adjacent-repeated-words-in-a-string.js -->
-
 ```js
 countAdjacentPairs = (searchString, p1 = /\b(\w+)\b\s+\1\b\s*(\1\b\s)*/gi) =>
   searchString === "" ? 0 : (searchString.match(p1) || []).length;
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -86,7 +83,6 @@ _Write a function, persistence, that takes in a positive parameter num and retur
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Persistent-bugger.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Persistent-bugger.js -->
-
 ```js
 persistence = (num, i = 0, ar = []) => {
   return num
@@ -103,7 +99,6 @@ persistence = (num, i = 0, ar = []) => {
       );
 };
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -120,7 +115,6 @@ _The input will always be valid (numbers will be an array of length 2 or greater
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Two-Sum.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Two-Sum.js -->
-
 ```js
 function twoSum(numbers, target) {
   let arr = [],
@@ -133,7 +127,6 @@ function twoSum(numbers, target) {
   return arr;
 }
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -146,7 +139,6 @@ _Create a simple calculator that given a string of operators (), +, -, \*, / and
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Calculator.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Calculator.js -->
-
 ```js
 const Calculator = function () {
   this.evaluate = (string) => {
@@ -169,7 +161,6 @@ const Calculator = function () {
   };
 };
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -182,22 +173,15 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Extract-the-domain-name-from-a-URL.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Extract-the-domain-name-from-a-URL.js -->
-
 ```js
-function domainName(url) {
-  let p1 = /[\w-]*(?=\.)/g,
-    check1 = url.includes("//"),
-    check2 = url.includes("www.");
-  domExtract = (index) => url.slice(index).match(p1)[0];
-  if (check1)
-    return check2
-      ? domExtract(url.search("www.") + 4)
-      : domExtract(url.search(/[/]{2}/g) + 2);
-  else if (check2) return domExtract(url.search("www.") + 4);
-  else return domExtract(0);
-}
+function domainName(url){
+    let p1 = /[\w-]*(?=\.)/g, check1 = url.includes("//"), check2 = url.includes("www.")
+    domExtract = index => url.slice(index).match(p1)[0]
+    if(check1) return check2 ? domExtract(url.search("www.")+4) : domExtract(url.search(/[/]{2}/g)+2)
+      else if (check2) return domExtract(url.search("www.") + 4)
+      else return domExtract(0)
+  }
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -238,20 +222,12 @@ NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode 
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Decode-the-Morse-code.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Decode-the-Morse-code.js -->
-
 ```js
 var decodeBits = function (bits) {
-  let rx1 = /(\s)+/g,
-    rx2 = /(\d)+/g,
-    str = bits.replace(/0/g, " ").replace(/(\d+)/g, `,$1,`);
-  findMin = (regexPattern, string) =>
-    Math.min(
-      ...(string.match(regexPattern) || []).map((el) => (el = el.length))
-    );
-  let min = Math.min(findMin(rx2, str), findMin(rx1, str));
-  return str
-    .split(",")
-    .map((el) => {
+    let rx1 = /(\s)+/g, rx2 = /(\d)+/g, str = bits.replace(/0/g, " ").replace(/(\d+)/g, `,$1,`);
+    findMin = (regexPattern, string) => Math.min(...(string.match(regexPattern)||[]).map((el) => (el = el.length)));
+    let min= Math.min(findMin(rx2, str),findMin(rx1, str))
+    return str.split(",").map((el) => {
       if (el.includes("1")) {
         if (el.length === min) {
           return (el = ".");
@@ -267,19 +243,17 @@ var decodeBits = function (bits) {
           return (el = "   ");
         }
       }
-    })
-    .join("");
-};
-var decodeMorse = function (morseCode) {
-  morseCode = morseCode.replace(/\s\s\s/g, " _ ").split(" ");
-  morseCode = morseCode.map((el) => {
-    return el === "_" ? (el = " ") : (el = MORSE_CODE[el]);
-  });
-  if (morseCode.join("") === "T") return "E";
-  return morseCode.join("");
-};
+    }).join("");
+  };
+  var decodeMorse = function (morseCode) {
+    morseCode = morseCode.replace(/\s\s\s/g, " _ ").split(" ");
+    morseCode = morseCode.map((el) => {
+      return el === "_" ? (el = " ") : (el = MORSE_CODE[el]);
+    });
+    if (morseCode.join("") === "T") return "E";
+    return morseCode.join("");
+  };
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -318,7 +292,6 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Human-readable-duration-format.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Human-readable-duration-format.js -->
-
 ```js
 function formatDuration(seconds) {
   let t = [],
@@ -363,7 +336,6 @@ function formatDuration(seconds) {
   return t_rem.join(" ");
 }
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -396,12 +368,9 @@ Note: In case of an empty array return 0. You will not be tested with invalid in
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Count-the-smiley-faces.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Count-the-smiley-faces.js -->
-
 ```js
-countSmileys = (arr) =>
-  ((arr = arr.toString().match(/[;:][~-]?[)D]/g)) ? arr : "").length;
+countSmileys = arr=> ((arr = arr.toString().match(/[;:][~-]?[)D]/g))? arr : "").length
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -440,78 +409,49 @@ Otherwise return Player n is on square x. Where n is the current player and x is
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Snakes-and-Ladders.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Snakes-and-Ladders.js -->
-
 ```js
 function SnakesLadders() {
-  gameStats.start();
-}
-let gameStats = {
-  pos: { p1: 0, p2: 0 },
-  p1turn: true,
-  ladders: {
-    2: 38,
-    7: 14,
-    8: 31,
-    15: 26,
-    21: 42,
-    28: 84,
-    36: 44,
-    51: 67,
-    71: 91,
-    78: 98,
-    87: 94,
-  },
-  snakes: {
-    16: 6,
-    46: 25,
-    49: 11,
-    62: 19,
-    64: 60,
-    74: 53,
-    89: 68,
-    92: 88,
-    95: 75,
-    99: 80,
-  },
-  start: function () {
-    this.pos.p1 = 0;
-    this.pos.p2 = 0;
-    this.p1turn = true;
-  },
-};
-SnakesLadders.prototype.play = function (die1, die2) {
-  const dieSum = die1 + die2;
-  let gameMessage = "";
-  if (gameStats.pos.p1 == 100 || gameStats.pos.p2 == 100) return "Game over!";
-  sOrLs = (player) => {
-    if (Object.keys(gameStats.ladders).includes(`${gameStats.pos[player]}`)) {
-      gameStats.pos[player] = gameStats.ladders[`${gameStats.pos[player]}`];
-    }
-    if (Object.keys(gameStats.snakes).includes(`${gameStats.pos[player]}`)) {
-      gameStats.pos[player] = gameStats.snakes[`${gameStats.pos[player]}`];
-    }
+    gameStats.start();
+  }
+  let gameStats = {
+    pos: {p1: 0,p2: 0},
+    p1turn: true,
+    ladders: {"2":38, "7":14, "8":31, "15":26, "21":42, "28":84, "36":44, "51":67, "71":91, "78":98, "87":94},
+    snakes: {"16":6, "46":25, "49":11, "62":19, "64":60, "74":53, "89":68, "92":88, "95":75, "99":80},
+    start: function () {
+      this.pos.p1 = 0;
+      this.pos.p2 = 0;
+      this.p1turn = true;
+    },
   };
-  over100 = (player, sum) => {
-    if (gameStats.pos[player] > 100) {
-      gameStats.pos[player] =
-        100 - (sum - (100 - (gameStats.pos[player] - sum)));
+  SnakesLadders.prototype.play = function (die1, die2) {
+    const dieSum = die1 + die2; let gameMessage = "";
+    if (gameStats.pos.p1 == 100 || gameStats.pos.p2 == 100) return "Game over!";
+    sOrLs = player => {
+      if (Object.keys(gameStats.ladders).includes(`${gameStats.pos[player]}`)) {
+        gameStats.pos[player] = gameStats.ladders[`${gameStats.pos[player]}`];
+      }
+      if (Object.keys(gameStats.snakes).includes(`${gameStats.pos[player]}`)) {
+        gameStats.pos[player] = gameStats.snakes[`${gameStats.pos[player]}`];
+      }
+    }
+    over100 = (player, sum)=> {
+      if (gameStats.pos[player] > 100) {
+        gameStats.pos[player] = 100 - (sum - (100 - (gameStats.pos[player] - sum)));
+        sOrLs(player);
+      }
+    }
+    turnMovement = player =>{
+      gameStats.pos[player] += dieSum;
       sOrLs(player);
+      over100(player, dieSum);
+      gameStats.pos[player] == 100 ? (gameMessage = `Player ${player[1]} Wins!`) : (gameMessage = `Player ${player[1]} is on square ${gameStats.pos[player]}`);
     }
+    gameStats.p1turn ? turnMovement("p1") : turnMovement("p2")
+    if (die1 !== die2) gameStats.p1turn = !gameStats.p1turn;
+    return gameMessage;
   };
-  turnMovement = (player) => {
-    gameStats.pos[player] += dieSum;
-    sOrLs(player);
-    over100(player, dieSum);
-    gameStats.pos[player] == 100
-      ? (gameMessage = `Player ${player[1]} Wins!`)
-      : (gameMessage = `Player ${player[1]} is on square ${gameStats.pos[player]}`);
-  };
-  gameStats.p1turn ? turnMovement("p1") : turnMovement("p2");
-  if (die1 !== die2) gameStats.p1turn = !gameStats.p1turn;
-  return gameMessage;
-};
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -549,70 +489,58 @@ Columns may only contain integers: 1..N (N included)
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Validate-sudoku-nxn.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
-
 ```js
 var Sudoku = function (data) {
-  return {
-    isValid: function () {
-      let i = 0,
-        j = 0,
-        end;
+    return {
+      isValid: function () {
+        let i = 0,j = 0,end;
 
-      //    check rows
-      while (i < data.length) {
-        let arr = [...new Set(data[i])];
-        arr.filter((el) => el <= data.length && el > 0);
-        data.length === arr.length && arr[0] !== "" && arr[0] !== true
-          ? (end = true)
-          : (end = false);
-        i++;
-      }
-      i = 0;
-
-      //    check columns
-      while (i < data.length && end) {
-        let set = new Set(),
-          arr = [];
-        while (j < data.length) {
-          if (data[j][i] <= data.length && data[j][i] > 0) set.add(data[j][i]);
-          j++;
+        //    check rows
+        while (i < data.length) {
+          let arr = [...new Set(data[i])];
+          arr.filter((el) => el <= data.length && el > 0);
+          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
+          i++;
         }
-        arr = [...set];
-        data.length === arr.length && arr[0] !== "" && arr[0] !== true
-          ? (end = true)
-          : (end = false);
-        j = 0;
-        i++;
-      }
+        i = 0;
 
-      //    little squares check
-      if (data.length === 9 && end) {
-        recursiveBoi = (someData) => {
-          someData = someData.filter((el) => el != null && el != "");
-          if (!someData[0]) {
-            return true;
-          } else {
-            let arr = [],
-              set = new Set();
-            for (let i = 0; i < 3; i++) {
-              arr.push(...someData[i].splice(0, 3));
-            }
-            arr = [...new Set(arr)];
-            arr.filter((el) => el <= data.length && el > 0);
-            data.length === arr.length && arr[0] !== "" && arr[0] !== true
-              ? recursiveBoi(someData)
-              : (end = false);
+        //    check columns
+        while (i < data.length && end) {
+          let set = new Set(),arr = [];
+          while (j < data.length) {
+            if (data[j][i] <= data.length && data[j][i] > 0) set.add(data[j][i]);
+            j++;
           }
-        };
-        recursiveBoi(data);
-      }
+          arr = [...set];
+          (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? end = true : end = false
+          j = 0;
+          i++;
+        }
 
-      return end;
-    },
+        //    little squares check
+        if (data.length === 9 && end) {
+          recursiveBoi = (someData) => {
+            someData = someData.filter((el) => el != null && el != "");
+            if (!someData[0]) {
+              return true;
+            } else {
+              let arr = [],set = new Set();
+              for (let i = 0; i < 3; i++) {
+                arr.push(...someData[i].splice(0, 3));
+              }
+              arr = [...new Set(arr)];
+              arr.filter((el) => el <= data.length && el > 0);
+              (data.length === arr.length && arr[0] !== "" && arr[0] !== true) ? recursiveBoi(someData) : end = false
+            }
+          }
+          recursiveBoi(data);
+        }
+
+        return end;
+      },
+    };
   };
-};
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -637,7 +565,6 @@ rgb(148, 0, 211); // returns 9400D3
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/RGB-to-hex.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
-
 ```js
 let rgb = (r, g, b, Z = 0) =>
   [r, g, b]
@@ -647,7 +574,6 @@ let rgb = (r, g, b, Z = 0) =>
     .join("")
     .toUpperCase();
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -676,7 +602,6 @@ beeramid(5000, 3); // should === 16
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Beeramid.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Beeramid.js -->
-
 ```js
 var beeramid = function (bonus, price) {
   let i = 1,
@@ -688,7 +613,6 @@ var beeramid = function (bonus, price) {
   return i - 2;
 };
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -713,7 +637,6 @@ Here's the deal:
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/The-hashtag-generator.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/The-hashtag-generator.js -->
-
 ```js
 function generateHashtag(str) {
   if (!str.trim()) return false;
@@ -724,7 +647,6 @@ function generateHashtag(str) {
   return str.length >= 140 ? false : `#${str}`;
 }
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -755,7 +677,6 @@ encryptThis("hello world") === "104olle 119drlo";
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Encrypt-this.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Encrypt-this.js -->
-
 ```js
 var encryptThis = function (text) {
   let fin_str = "";
@@ -777,7 +698,6 @@ var encryptThis = function (text) {
   return fin_str;
 };
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/Encrypt-this.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -811,7 +731,6 @@ NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array.
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Snail.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Snail.js -->
-
 ```js
 snail = function (array) {
   let final_arr = [];
@@ -848,7 +767,6 @@ snail = function (array) {
   return recursiveBoi(array);
 };
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/Snail.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -870,7 +788,6 @@ balancedParens(3) => ["()()()","(())()","()(())","(()())","((()))"]
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/All-balanced-parentheses.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
-
 ```js
 function balancedParens(n) {
   var all = [];
@@ -893,7 +810,6 @@ function balancedParens(n) {
   return all;
 }
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
@@ -922,7 +838,6 @@ Example:
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Range-extraction.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Range-extraction.js -->
-
 ```js
 function solution(list) {
   let regexPattern = /((?<=(\d-\d)),(\d)|(?<=(\d-\d\d)),(\d\d)|(?<=(\d--\d\d)),-(\d\d)|(?<=(\d--\d)),-(\d))/g;
@@ -963,7 +878,6 @@ function solution(list) {
   return final_arr.toString(2).replace(regexPattern, "");
 }
 ```
-
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
 ---
@@ -1003,7 +917,6 @@ josephus([1, 2, 3, 4, 5, 6, 7], 3) == [3, 6, 2, 7, 5, 1, 4];
 
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Josephus-Permutation.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Josephus-Permutation.js -->
-
 ```js
 function josephus(items, k) {
   let final_arr = [];
@@ -1021,56 +934,38 @@ function josephus(items, k) {
   return recursiveFunction(items, k);
 }
 ```
-
 <!-- The below code snippet is automatically added from ./js-solutions/Josephus-Permutation.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
 
-## <!-- AUTO-GENERATED-CONTENT:END *-->
+---
 
-### [Strip Comments](https://www.codewars.com/kata/51c8e37cee245da6b40000bd) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Strip-Comments.js)
+### [Ones and Zeros](https://www.codewars.com/kata/578553c3a1b8d5c40300037c) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Ones-and-Zeros.js)
 
-**Problem** (4kyu):
+**Problem** (7kyu):
 
-Complete the solution so that it strips all text that follows any of a set of comment markers passed in. Any whitespace at the end of the line should also be stripped out.
+Given an array of ones and zeroes, convert the equivalent binary value to an integer.
 
-Given an input string of:
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
 
-```js
-`apples, pears # and bananas
-grapes
-bananas !apples`;
-```
-
-The output expected would be:
+Examples:
 
 ```js
-`apples, pears
-grapes
-bananas`;
+Testing: [0, 0, 0, 1] ==> 1
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 0, 1] ==> 5
+Testing: [1, 0, 0, 1] ==> 9
+Testing: [0, 0, 1, 0] ==> 2
+Testing: [0, 1, 1, 0] ==> 6
+Testing: [1, 1, 1, 1] ==> 15
+Testing: [1, 0, 1, 1] ==> 11
 ```
 
-The code would be called like so:
+However, the arrays can have varying lengths, not just limited to 4.
 
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Ones-and-Zeros.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Ones-and-Zeros.js -->
 ```js
-var result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", [
-  "#",
-  "!",
-]);
-// result should == "apples, pears\ngrapes\nbananas"
+const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
 ```
-
-<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Strip-Comments.js) -->
-<!-- The below code snippet is automatically added from ./js-solutions/Strip-Comments.js -->
-
-```js
-function solution(input, markers) {
-  let first_index = input.indexOf(markers[0]) - 1,
-    second_index = input.indexOf(markers[1]) - 1;
-  return (
-    input.slice(input[0], first_index) +
-    input.slice(input.indexOf("\n"), second_index)
-  );
-}
-```
-
-<!-- The below code snippet is automatically added from ./js-solutions/Strip-Comments.js -->
+<!-- The below code snippet is automatically added from ./js-solutions/Ones-and-Zeros.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
