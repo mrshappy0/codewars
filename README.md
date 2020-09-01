@@ -30,6 +30,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 13. [Beeramid](https://github.com/mrshappy0/codewars#beeramid--solution)(5kyu)
 14. [The hashtag generator](https://github.com/mrshappy0/codewars#The-hashtag-generator--solution)(5kyu)
 15. [Encrypt this!](https://github.com/mrshappy0/codewars#Encrypt-this--solution)(4kyu)
+16. [Snail](https://github.com/mrshappy0/codewars#Snail--solution)(4kyu)
 
 </details>
 
@@ -722,6 +723,8 @@ function generateHashtag(str) {
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
+---
+
 ### [Encrypt this!](https://www.codewars.com/kata/5848565e273af816fb000449) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Encrypt-this.js)
 
 **Problem** (4kyu):
@@ -772,4 +775,75 @@ var encryptThis = function (text) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/Encrypt-this.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Snail](https://www.codewars.com/kata/521c2db8ddc89b9b7a0000c1) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Snail.js)
+
+**Problem** (4kyu):
+
+Given an n x n array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+
+```js
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+snail(array) #=> [1,2,3,6,9,8,7,4,5]
+```
+
+For better understanding, please follow the numbers of the next array consecutively:
+
+```js
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+snail(array) #=> [1,2,3,4,5,6,7,8,9]
+```
+
+NOTE: The idea is not sort the elements from the lowest value to the highest; the idea is to traverse the 2-d array in a clockwise snailshell pattern.
+
+NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Snail.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Snail.js -->
+
+```js
+snail = function (array) {
+  let final_arr = [];
+  function recursiveBoi(arr) {
+    let temp_arr = [],
+      length = arr.length,
+      side_loop = length - 2,
+      i = 1,
+      j = 1;
+    if (array[0].length !== 0 && array[0].length !== 1) {
+      final_arr = final_arr.concat(...arr.splice(0, 1));
+      while (i <= side_loop) {
+        final_arr.push(...arr[i - 1].splice(length - 1, 1));
+        i++;
+      }
+      final_arr = final_arr.concat(...arr.splice(length - 2, 1)[0].reverse());
+      while (j <= side_loop) {
+        temp_arr.push(...arr[j - 1].splice(0, 1));
+        j++;
+      }
+      final_arr = final_arr.concat(temp_arr.reverse());
+      if (arr[0]) {
+        return recursiveBoi(arr);
+      } else {
+        return final_arr;
+      }
+      return recursiveBoi(arr);
+    } else if (array[0].length === 0 || array[0].length === 1) {
+      if (final_arr.length > 0) {
+        return final_arr.concat(...array[0]);
+      } else return array[0];
+    }
+  }
+  return recursiveBoi(array);
+};
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Snail.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
