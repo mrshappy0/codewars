@@ -32,6 +32,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 15. [Encrypt this!](https://github.com/mrshappy0/codewars#Encrypt-this--solution)(4kyu)
 16. [Snail](https://github.com/mrshappy0/codewars#Snail--solution)(4kyu)
 17. [All Balanced Parentheses](https://github.com/mrshappy0/codewars#All-balanced-parentheses--solution)(4kyu)
+18. [Range Extraction](https://github.com/mrshappy0/codewars#Range-Extraction--solution)(4kyu)
 
 </details>
 
