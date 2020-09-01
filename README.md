@@ -31,6 +31,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 14. [The hashtag generator](https://github.com/mrshappy0/codewars#The-hashtag-generator--solution)(5kyu)
 15. [Encrypt this!](https://github.com/mrshappy0/codewars#Encrypt-this--solution)(4kyu)
 16. [Snail](https://github.com/mrshappy0/codewars#Snail--solution)(4kyu)
+17. [All Balanced Parentheses](https://github.com/mrshappy0/codewars#All-balanced-parentheses--solution)(4kyu)
 
 </details>
 
@@ -846,4 +847,53 @@ snail = function (array) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/Snail.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [All Balanced Parentheses](https://www.codewars.com/kata/5426d7a2c2c7784365000783) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/All-balanced-parentheses.js)
+
+**Problem** (4kyu):
+
+Write a function which makes a list of strings representing all of the ways you can balance n pairs of parentheses
+Examples
+
+```js
+balancedParens(0) => [""]
+balancedParens(1) => ["()"]
+balancedParens(2) => ["()()","(())"]
+balancedParens(3) => ["()()()","(())()","()(())","(()())","((()))"]
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/All-balanced-parentheses.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
+
+```js
+function balancedParens(n) {
+	var all = [];
+
+  function parens(left, right, str) {
+
+	if (left === 0 && right === 0) {
+	  all.push(str);
+	}
+
+	if (left > 0) {
+	  parens(left-1, right+1, str+"(");
+	}
+
+	if (right > 0) {
+	  parens(left, right-1, str+")");
+	}
+
+  }
+
+  parens(n, 0, "");
+  return all
+  }
+
+	  3 months ago
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
