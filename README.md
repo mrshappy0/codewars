@@ -37,7 +37,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 
 ---
 
-### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/codewarDecode the Morse code, advanced
+### [Create Phone Number](https://www.codewars.com/kata/525f50e3b73515a6db000b83) | [Solution](https://github.com/mrshappy0/Create-Phone-Number.js)
 
 _Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number._
 
@@ -907,10 +907,12 @@ A format for expressing an ordered list of integers is to use a comma separated 
 Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
 
 Example:
+
 ```js
 //solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
 // returns "-6,-3-1,3-5,7-11,14,15,17-20"
 ```
+
 <!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Range-extraction.js) -->
 <!-- The below code snippet is automatically added from ./js-solutions/Range-extraction.js -->
 
