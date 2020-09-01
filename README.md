@@ -34,6 +34,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 17. [All Balanced Parentheses](https://github.com/mrshappy0/codewars#All-balanced-parentheses--solution)(4kyu)
 18. [Range Extraction](https://github.com/mrshappy0/codewars#Range-Extraction--solution)(4kyu)
 19. [Josephus Permutation](https://github.com/mrshappy0/codewars#Josephus-Permutation--solution)(5kyu)
+20. [Strip Comments](https://github.com/mrshappy0/codewars#Strip-Comments--solution)(4kyu)
 
 </details>
 
@@ -965,6 +966,8 @@ function solution(list) {
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
+---
+
 ### [Josephus Permutation](https://www.codewars.com/kata/5550d638a99ddb113e0000a2) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Josephus-Permutation.js)
 
 **Problem** (5kyu):
@@ -1020,4 +1023,54 @@ function josephus(items, k) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/Josephus-Permutation.js -->
+
+## <!-- AUTO-GENERATED-CONTENT:END *-->
+
+### [Strip Comments](https://www.codewars.com/kata/51c8e37cee245da6b40000bd) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Strip-Comments.js)
+
+**Problem** (4kyu):
+
+Complete the solution so that it strips all text that follows any of a set of comment markers passed in. Any whitespace at the end of the line should also be stripped out.
+
+Given an input string of:
+
+```js
+`apples, pears # and bananas
+grapes
+bananas !apples`;
+```
+
+The output expected would be:
+
+```js
+`apples, pears
+grapes
+bananas`;
+```
+
+The code would be called like so:
+
+```js
+var result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", [
+  "#",
+  "!",
+]);
+// result should == "apples, pears\ngrapes\nbananas"
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Strip-Comments.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Strip-Comments.js -->
+
+```js
+function solution(input, markers) {
+  let first_index = input.indexOf(markers[0]) - 1,
+    second_index = input.indexOf(markers[1]) - 1;
+  return (
+    input.slice(input[0], first_index) +
+    input.slice(input.indexOf("\n"), second_index)
+  );
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Strip-Comments.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
