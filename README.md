@@ -26,7 +26,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 9.  [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution) (6kyu)
 10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
 11. [Validate Sudoku with size 'NxN'](https://github.com/mrshappy0/codewars#validate-sudoku-with-size-nxn--solution)(4kyu)
-11. [RGB to hex conversion](https://github.com/mrshappy0/codewars#rgb-to-hex-conversion--solution)(4kyu)
+12. [RGB to hex conversion](https://github.com/mrshappy0/codewars#rgb-to-hex-conversion--solution)(5kyu)
+12. [Beeramid](https://github.com/mrshappy0/codewars#beeramid--solution)(5kyu)
 
 </details>
 
@@ -565,5 +566,44 @@ let rgb = (r, g, b, Z = 0) =>
     .join("")
     .toUpperCase();
 ```
-<!-- The below code snippet is automatically added from ./js-solutions/Validate-sudoku-nxn.js -->
+<!-- The below code snippet is automatically added from ./js-solutions/RGB-to-hex.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Beeramid](https://www.codewars.com/kata/51e04f6b544cf3f6550000c1) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/beeramid.js)
+
+**Problem** (5kyu):
+
+Let's pretend your company just hired your friend from college and paid you a referral bonus. Awesome! To celebrate, you're taking your team out to the terrible dive bar next door and using the referral bonus to buy, and build, the largest three-dimensional beer can pyramid you can. And then probably drink those beers, because let's pretend it's Friday too.
+
+A beer can pyramid will square the number of cans in each level - 1 can in the top level, 4 in the second, 9 in the next, 16, 25...
+
+Complete the beeramid function to return the number of complete levels of a beer can pyramid you can make, given the parameters of:
+
+1. your referral bonus, and
+
+2. the price of a beer can
+
+For example:
+
+```js
+  beeramid(1500, 2); // should === 12
+  beeramid(5000, 3); // should === 16
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Beeramid.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Beeramid.js -->
+```js
+var beeramid = function (bonus, price) {
+  let i = 1,
+    sum = 0;
+  while (sum <= (bonus - (bonus % price)) / price) {
+    sum += i ** 2;
+    i++;
+  }
+  return i - 2;
+};
+```
+<!-- The below code snippet is automatically added from ./js-solutions/Beeramid.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
