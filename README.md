@@ -38,6 +38,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 21. [Ones and Zeros](https://github.com/mrshappy0/codewars#Ones-and-Zeros--solution)(7kyu)
 22. [IQ Test](https://github.com/mrshappy0/codewars#IQ-test--solution)(6kyu)
 23. [Sum of Digits - Digital Root](https://github.com/mrshappy0/codewars#Sum-of-Digits--solution)(6kyu)
+24. [Format a string of names like 'Bart, Lisa & Maggie'.](https://github.com/mrshappy0/codewars#Format-a-string--solution)(6kyu)
 
 </details>
 
@@ -1145,4 +1146,60 @@ function digital_root(n) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/Sum-of-Digits.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Format a string](https://www.codewars.com/kata/53368a47e38700bd8300030d) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Format-a-string.js)
+
+**Problem** (6kyu):
+
+Given: an array containing hashes of names
+
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+
+Example:
+
+```js
+list([{ name: "Bart" }, { name: "Lisa" }, { name: "Maggie" }]);
+// returns 'Bart, Lisa & Maggie'
+
+list([{ name: "Bart" }, { name: "Lisa" }]);
+// returns 'Bart & Lisa'
+
+list([{ name: "Bart" }]);
+// returns 'Bart'
+
+list([]);
+// returns ''
+```
+
+Note: all the hashes are pre-validated and will only contain A-Z, a-z, '-' and '.'.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Format-a-string.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Format-a-string.js -->
+
+```js
+function list(names) {
+  let i = 0,
+    rtrnString = "",
+    length = names.length;
+  switch (true) {
+    case length >= 2:
+      while (i < length - 2) {
+        rtrnString += `${names[i].name}, `;
+        i++;
+      }
+      return (rtrnString += `${names[length - 2].name} & ${
+        names[length - 1].name
+      }`);
+    case length === 1:
+      return `${names[0].name}`;
+    default:
+      return "";
+  }
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Format-a-string.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
