@@ -870,30 +870,90 @@ balancedParens(3) => ["()()()","(())()","()(())","(()())","((()))"]
 
 ```js
 function balancedParens(n) {
-	var all = [];
+  var all = [];
 
   function parens(left, right, str) {
+    if (left === 0 && right === 0) {
+      all.push(str);
+    }
 
-	if (left === 0 && right === 0) {
-	  all.push(str);
-	}
+    if (left > 0) {
+      parens(left - 1, right + 1, str + "(");
+    }
 
-	if (left > 0) {
-	  parens(left-1, right+1, str+"(");
-	}
-
-	if (right > 0) {
-	  parens(left, right-1, str+")");
-	}
-
+    if (right > 0) {
+      parens(left, right - 1, str + ")");
+    }
   }
 
   parens(n, 0, "");
-  return all
-  }
-
-	  3 months ago
+  return all;
+}
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
+
+## <!-- AUTO-GENERATED-CONTENT:END *-->
+
+### [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Range-extraction.js)
+
+**Problem** (4kyu):
+
+A format for expressing an ordered list of integers is to use a comma separated list of either
+
+    individual integers
+    or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example ("12, 13, 15-17")
+
+Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
+
+Example:
+```js
+//solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
+// returns "-6,-3-1,3-5,7-11,14,15,17-20"
+```
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Range-extraction.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Range-extraction.js -->
+
+```js
+function solution(list) {
+  let regexPattern = /((?<=(\d-\d)),(\d)|(?<=(\d-\d\d)),(\d\d)|(?<=(\d--\d\d)),-(\d\d)|(?<=(\d--\d)),-(\d))/g;
+  let toggleRun = false,
+    temp_arr = [],
+    unique = [],
+    final_arr = [],
+    i = 0,
+    length = list.length;
+  function compareArrays(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+  }
+  while (i < length) {
+    let i_adder = 0;
+    i = i + i_adder;
+    let fake = Array.from({ length: 3 }, (_, j) => j + list[i]);
+    let mini_arr = [list[i], list[i + 1], list[i + 2]];
+    if (compareArrays(fake, mini_arr)) {
+      temp_arr = [...temp_arr, ...mini_arr];
+      unique = [...new Set(temp_arr)];
+      toggleRun = true;
+    } else {
+      if (toggleRun) {
+        final_arr.push(`${Math.min(...unique)}-${Math.max(...unique)}`);
+        toggleRun = false;
+        temp_arr = [];
+        i_adder = 1;
+      } else {
+        final_arr.push(list[i]);
+      }
+    }
+    i++;
+  }
+  return final_arr.toString(2).replace(regexPattern, "");
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Range-extraction.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
