@@ -33,6 +33,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 16. [Snail](https://github.com/mrshappy0/codewars#Snail--solution)(4kyu)
 17. [All Balanced Parentheses](https://github.com/mrshappy0/codewars#All-balanced-parentheses--solution)(4kyu)
 18. [Range Extraction](https://github.com/mrshappy0/codewars#Range-Extraction--solution)(4kyu)
+19. [Josephus Permutation](https://github.com/mrshappy0/codewars#Josephus-Permutation--solution)(5kyu)
 
 </details>
 
@@ -893,8 +894,9 @@ function balancedParens(n) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/All-balanced-parentheses.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
 
-## <!-- AUTO-GENERATED-CONTENT:END *-->
+---
 
 ### [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Range-extraction.js)
 
@@ -961,5 +963,61 @@ function solution(list) {
 }
 ```
 
-<!-- The below code snippet is automatically added from ./js-solutions/Range-extraction.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+### [Josephus Permutation](https://www.codewars.com/kata/5550d638a99ddb113e0000a2) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Josephus-Permutation.js)
+
+**Problem** (5kyu):
+
+This problem takes its name by arguably the most important event in the life of the ancient historian Josephus: according to his tale, he and his 40 soldiers were trapped in a cave by the Romans during a siege.
+
+Refusing to surrender to the enemy, they instead opted for mass suicide, with a twist: they formed a circle and proceeded to kill one man every three, until one last man was left (and that it was supposed to kill himself to end the act).
+
+Well, Josephus and another man were the last two and, as we now know every detail of the story, you may have correctly guessed that they didn't exactly follow through the original idea.
+
+You are now to create a function that returns a Josephus permutation, taking as parameters the initial array/list of items to be permuted as if they were in a circle and counted out every k places until none remained.
+
+Tips and notes: it helps to start counting from 1 up to n, instead of the usual range 0..n-1; k will always be >=1.
+
+For example, with n=7 and k=3 josephus(7,3) should act this way.
+
+```js
+[1,2,3,4,5,6,7] - initial sequence
+[1,2,4,5,6,7] => 3 is counted out and goes into the result [3]
+[1,2,4,5,7] => 6 is counted out and goes into the result [3,6]
+[1,4,5,7] => 2 is counted out and goes into the result [3,6,2]
+[1,4,5] => 7 is counted out and goes into the result [3,6,2,7]
+[1,4] => 5 is counted out and goes into the result [3,6,2,7,5]
+[4] => 1 is counted out and goes into the result [3,6,2,7,5,1]
+[] => 4 is counted out and goes into the result [3,6,2,7,5,1,4]
+```
+
+So our final result is:
+
+```js
+josephus([1, 2, 3, 4, 5, 6, 7], 3) == [3, 6, 2, 7, 5, 1, 4];
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Josephus-Permutation.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Josephus-Permutation.js -->
+
+```js
+function josephus(items, k) {
+  let final_arr = [];
+  function recursiveFunction(arr, x) {
+    while (arr.length > 0) {
+      if (x > items.length) return recursiveFunction(items, x - items.length);
+      else {
+        x--;
+        final_arr.push(...items.splice(x, 1));
+        x = x + k;
+      }
+    }
+    return final_arr;
+  }
+  return recursiveFunction(items, k);
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Josephus-Permutation.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
