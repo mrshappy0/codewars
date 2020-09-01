@@ -685,7 +685,7 @@ var beeramid = function (bonus, price) {
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
-### [The Hashtag Generator](https://www.codewars.com/kata/51e04f6b544cf3f6550000c1) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/The-hashtag-generator.js)
+### [The Hashtag Generator](https://www.codewars.com/kata/52449b062fb80683ec000024) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/The-hashtag-generator.js)
 
 **Problem** (5kyu):
 
