@@ -46,6 +46,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 29. [Exes and Ohs](https://github.com/mrshappy0/codewars#Exes-and-Ohs--solution)(7kyu)
 30. [Tribonacci Sequence](https://github.com/mrshappy0/codewars#Tribonacci-Sequence--solution)(6kyu)
 31. [Disemvowel Trolls](https://github.com/mrshappy0/codewars#Disemvowel-Trolls--solution)(7kyu)
+32. [Multiply](https://github.com/mrshappy0/codewars#Multiply--solution)(8kyu)
 
 </details>
 
@@ -1468,6 +1469,25 @@ function disemvowel(str) {
   let regexPattern = /A|E|I|O|U|a|e|i|o|u/g;
   str = str.replace(regexPattern, "");
   return str;
+}
+```
+
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Multiply](https://www.codewars.com/kata/50654ddff44f800200000004) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Multiply.js)
+
+**Problem** (8kyu):
+
+This code does not execute properly. Try and figure out why?
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Multiply.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Multiply.js -->
+
+```js
+function multiply(a, b) {
+  return a * b;
 }
 ```
 
