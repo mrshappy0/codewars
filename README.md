@@ -36,7 +36,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 19. [Josephus Permutation](https://github.com/mrshappy0/codewars#Josephus-Permutation--solution)(5kyu)
 20. [Strip Comments](https://github.com/mrshappy0/codewars#Strip-Comments--solution)(4kyu)
 21. [Ones and Zeros](https://github.com/mrshappy0/codewars#Ones-and-Zeros--solution)(7kyu)
-22. [IQ Test](https://github.com/mrshappy0/codewars#IQ-test--solution)(7kyu)
+22. [IQ Test](https://github.com/mrshappy0/codewars#IQ-test--solution)(6kyu)
+23. [Sum of Digits - Digital Root](https://github.com/mrshappy0/codewars#Sum-of-Digits--solution)(6kyu)
 
 </details>
 
@@ -1110,4 +1111,38 @@ function iqTest(numbers) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/IQ-test.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Sum of Digits Digital Root](https://www.codewars.com/kata/541c8630095125aba6000c00) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Sum-of-Digits.js)
+
+**Problem** (6kyu):
+
+Digital root is the recursive sum of all the digits in a number.
+
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+Examples
+
+```js
+16; // ==> 1 + 6 = 7
+942; // ==> 9 + 4 + 2 = 15  -->  1 + 5 = 6
+132189; // ==> 1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+493193; // ==> 4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Sum-of-Digits.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Sum-of-Digits.js -->
+
+```js
+function digital_root(n) {
+  const reducer = (a, b) => parseInt(a) + parseInt(b);
+  let arr = [...n.toString()];
+  return arr.length !== 1
+    ? digital_root(arr.reduce(reducer))
+    : parseInt(arr[0]);
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Sum-of-Digits.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
