@@ -39,6 +39,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 22. [IQ Test](https://github.com/mrshappy0/codewars#IQ-test--solution)(6kyu)
 23. [Sum of Digits - Digital Root](https://github.com/mrshappy0/codewars#Sum-of-Digits--solution)(6kyu)
 24. [Format a string of names like 'Bart, Lisa & Maggie'.](https://github.com/mrshappy0/codewars#Format-a-string--solution)(6kyu)
+25. [Simple Pig Latin](https://github.com/mrshappy0/codewars#Simple-Pig-Latin--solution)(6kyu)
 
 </details>
 
@@ -1202,4 +1203,42 @@ function list(names) {
 ```
 
 <!-- The below code snippet is automatically added from ./js-solutions/Format-a-string.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Simple Pig Latin](https://www.codewars.com/kata/520b9d2ad5c005041100000f) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Simple-Pig-Latin.js)
+
+**Problem** (5kyu):
+
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+Examples:
+
+```js
+pigIt("Pig latin is cool"); // igPay atinlay siay oolcay
+pigIt("Hello world !"); // elloHay orldway !
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Simple-Pig-Latin.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Simple-Pig-Latin.js -->
+
+```js
+function pigIt(str) {
+  let arr = str.split(" "),
+    i = 0;
+  let finalArr = [];
+  while (i < arr.length) {
+    if (arr[i] !== "?" && arr[i] !== "!") {
+      finalArr.push(arr[i].slice(1) + arr[i][0] + "ay");
+      i++;
+    } else {
+      finalArr.push(arr[i]);
+      i++;
+    }
+  }
+  return finalArr.join(" ");
+}
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Simple-Pig-Latin.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
