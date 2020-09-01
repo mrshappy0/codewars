@@ -43,6 +43,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 26. [Bit counting](https://github.com/mrshappy0/codewars#Bit-counting--solution)(6kyu)
 27. [Convert string to camel case](https://github.com/mrshappy0/codewars#Convert-string-to-camel-case--solution)(6kyu)
 28. [More Zeros than Ones](https://github.com/mrshappy0/codewars#More-Zero-than-Ones--solution)(6kyu)
+29. [Exes and Ohs](https://github.com/mrshappy0/codewars#Exes-and-Ohs--solution)(7kyu)
 
 </details>
 
@@ -1347,6 +1348,43 @@ const moreZeros = (s) => {
   finalArray = finalArray.map((bin) => String.fromCharCode(parseInt(bin, 2)));
   return finalArray;
 };
+```
+
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Exes and Ohs](https://www.codewars.com/kata/55908aad6620c066bc00002a) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Exes-and-Ohs.js)
+
+**Problem** (7kyu):
+
+Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+```js
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Exes-and-Ohs.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Exes-and-Ohs.js -->
+
+```js
+function XO(str) {
+  let o_reg = /[o]/gi,
+    x_reg = /[x]/gi,
+    o_array = str.match(o_reg),
+    x_array = str.match(x_reg);
+  if (o_array && x_array) {
+    return o_array.length == x_array.length;
+  } else {
+    return str === "";
+  }
+}
 ```
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
