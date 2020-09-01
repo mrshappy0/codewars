@@ -26,6 +26,8 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 9.  [Count the smiley faces!](https://github.com/mrshappy0/codewars#count-the-smiley-faces--solution) (6kyu)
 10. [Snakes and Ladders](https://github.com/mrshappy0/codewars#snakes-and-ladders--solution) (5kyu)
 11. [Validate Sudoku with size 'NxN'](https://github.com/mrshappy0/codewars#validate-sudoku-with-size-nxn--solution)(4kyu)
+11. [RGB to hex conversion](https://github.com/mrshappy0/codewars#rgb-to-hex-conversion--solution)(4kyu)
+
 </details>
 
 ---
