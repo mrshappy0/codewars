@@ -29,6 +29,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 12. [RGB to hex conversion](https://github.com/mrshappy0/codewars#rgb-to-hex-conversion--solution)(5kyu)
 13. [Beeramid](https://github.com/mrshappy0/codewars#beeramid--solution)(5kyu)
 14. [The hashtag generator](https://github.com/mrshappy0/codewars#The-hashtag-generator--solution)(5kyu)
+15. [Encrypt this!](https://github.com/mrshappy0/codewars#Encrypt-this--solution)(4kyu)
 
 </details>
 
@@ -685,6 +686,8 @@ var beeramid = function (bonus, price) {
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 
+---
+
 ### [The Hashtag Generator](https://www.codewars.com/kata/52449b062fb80683ec000024) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/The-hashtag-generator.js)
 
 **Problem** (5kyu):
@@ -717,5 +720,56 @@ function generateHashtag(str) {
 }
 ```
 
-<!-- The below code snippet is automatically added from ./js-solutions/The-hashtag-generator.js -->
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+### [Encrypt this!](https://www.codewars.com/kata/5848565e273af816fb000449) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Encrypt-this.js)
+
+**Problem** (4kyu):
+
+Description:
+
+Encrypt this!
+
+You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+    Your message is a string containing space separated words.
+    You need to encrypt each word in the message using the following rules:
+        The first letter needs to be converted to its ASCII code.
+        The second letter needs to be switched with the last letter
+    Keepin' it simple: There are no special characters in input.
+
+Examples:
+
+```js
+encryptThis("Hello") === "72olle";
+encryptThis("good") === "103doo";
+encryptThis("hello world") === "104olle 119drlo";
+```
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Encrypt-this.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Encrypt-this.js -->
+
+```js
+var encryptThis = function (text) {
+  let fin_str = "";
+  fin_str = text
+    .split(" ")
+    .map((elem) => {
+      let first = elem[0],
+        second = elem[1] || elem[0],
+        end = elem[elem.length - 1];
+      if (elem.length === 1) return elem.replace(first, elem.charCodeAt(0));
+      else {
+        elem = elem.slice(0, -1) + second;
+        elem = elem.replace(first, elem.charCodeAt(0));
+        elem = elem.replace(second, end);
+        return elem;
+      }
+    })
+    .join(" ");
+  return fin_str;
+};
+```
+
+<!-- The below code snippet is automatically added from ./js-solutions/Encrypt-this.js -->
 <!-- AUTO-GENERATED-CONTENT:END *-->
