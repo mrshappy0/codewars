@@ -45,6 +45,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 28. [More Zeros than Ones](https://github.com/mrshappy0/codewars#More-Zero-than-Ones--solution)(6kyu)
 29. [Exes and Ohs](https://github.com/mrshappy0/codewars#Exes-and-Ohs--solution)(7kyu)
 30. [Tribonacci Sequence](https://github.com/mrshappy0/codewars#Tribonacci-Sequence--solution)(6kyu)
+31. [Disemvowel Trolls](https://github.com/mrshappy0/codewars#Disemvowel-Trolls--solution)(7kyu)
 
 </details>
 
@@ -1440,6 +1441,33 @@ function tribonacci(signature, n) {
     case n === 0:
       return [];
   }
+}
+```
+
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [Disemvowel Trolls](https://www.codewars.com/kata/52fba66badcd10859f00097e) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/Disemvowel-Trolls.js)
+
+**Problem** (7kyu):
+
+Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/Disemvowel-Trolls.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/Disemvowel-Trolls.js -->
+
+```js
+function disemvowel(str) {
+  let regexPattern = /A|E|I|O|U|a|e|i|o|u/g;
+  str = str.replace(regexPattern, "");
+  return str;
 }
 ```
 
