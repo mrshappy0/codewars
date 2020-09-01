@@ -42,6 +42,7 @@ My Current Rank: ![](https://www.codewars.com/users/mrshappy0/badges/large).
 25. [Simple Pig Latin](https://github.com/mrshappy0/codewars#Simple-Pig-Latin--solution)(5kyu)
 26. [Bit counting](https://github.com/mrshappy0/codewars#Bit-counting--solution)(6kyu)
 27. [Convert string to camel case](https://github.com/mrshappy0/codewars#Convert-string-to-camel-case--solution)(6kyu)
+28. [More Zeros than Ones](https://github.com/mrshappy0/codewars#More-Zero-than-Ones--solution)(6kyu)
 
 </details>
 
@@ -1299,6 +1300,53 @@ function toCamelCase(str) {
     return str;
   }
 }
+```
+
+<!-- AUTO-GENERATED-CONTENT:END *-->
+
+---
+
+### [More Zeros than Ones](https://www.codewars.com/kata/5d41e16d8bad42002208fe1a) | [Solution](https://github.com/mrshappy0/codewars/blob/master/js-solutions/More-Zeros-than-Ones.js)
+
+**Problem** (6kyu):
+
+Create a moreZeros function which will receive a string for input, and return an array (or null terminated string in C) containing only the characters from that string whose binary representation of its ASCII value consists of more zeros than ones.
+
+You should remove any duplicate characters, keeping the first occurence of any such duplicates, so they are in the same order in the final array as they first appeared in the input string.
+
+Examples:
+
+```js
+//'abcde' === ["1100001", "1100010", "1100011", "1100100", "1100101"]
+//               True       True       False      True       False
+
+//        --> ['a','b','d']
+
+//'DIGEST'--> ['D','I','E','T']
+```
+
+All input will be valid strings of length > 0. Leading zeros in binary should not be counted.
+
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./js-solutions/More-Zeros-than-Ones.js) -->
+<!-- The below code snippet is automatically added from ./js-solutions/More-Zeros-than-Ones.js -->
+
+```js
+const moreZeros = (s) => {
+  let finalArray = [],
+    zero_patt = /[0]/g;
+  let binArray = [...new Set([...s])]
+    .map((char) => char.charCodeAt(0).toString(2))
+    .forEach((bin) => {
+      let zero_arr = bin.match(zero_patt),
+        one_string = bin.replace(zero_patt, ""),
+        zero_string = zero_arr ? zero_arr.join("") : false;
+      if (zero_string.length > one_string.length) {
+        finalArray.push(bin);
+      }
+    });
+  finalArray = finalArray.map((bin) => String.fromCharCode(parseInt(bin, 2)));
+  return finalArray;
+};
 ```
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
