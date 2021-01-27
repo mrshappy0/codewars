@@ -4,7 +4,8 @@
   "description": "A collection of Code Wars Solutions by Adam Shappy",
   "main": "",
   "scripts": {
-    "docs": "md-magic --path '**/*.md' --ignore 'node_modules'"
+    "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
+    "test": "mocha ./test/**/*$MATCH*.test.js --timeout 1500"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,11 @@
   },
   "homepage": "https://github.com/mrshappy0/codewars#readme",
   "devDependencies": {
-    "markdown-magic": "^1.0.0"
+    "markdown-magic": "^1.0.0",
+    "chai": "*",
+    "mocha": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
 }
