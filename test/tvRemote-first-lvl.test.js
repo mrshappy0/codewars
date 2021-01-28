@@ -1,5 +1,5 @@
 const assert = require("chai").assert;
-const { tvRemote } = require("../js-solutions/tvRemote.js");
+const { tvRemote } = require("../js-solutions/tvRemote-first-lvl");
 
 describe("Sample Tests", function () {
   it("example", function () {

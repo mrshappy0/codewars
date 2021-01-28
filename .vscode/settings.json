@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["javascript", "typescript"],
+  "prettier.disableLanguages": ["vue"],
+  "json.format.enable": false
+}
